@@ -1,0 +1,1246 @@
+[
+  {
+    "chunk_id": "train-1-chunk-1",
+    "doc_id": "train-1",
+    "title": "Cháo trắng Hàng Xanh",
+    "addresses": [
+      "Hẻm 283 Xô Viết Nghệ Tĩnh, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Cháo trắng Hàng Xanh. Địa chỉ: Hẻm 283 Xô Viết Nghệ Tĩnh, TP. Hồ Chí Minh. Chủ đề: an_toi. Nếu bạn muốn ăn tối Sài Gòn thanh đạm, nhẹ nhàng thì có thể thay đổi khẩu vị với món cháo trắng nổi tiếng ở khu vực Hàng Xanh. Điểm cộng của món ăn ở đây là bát cháo nóng hổi, được nấu nhừ, tỏa mùi thơm lá dứa."
+  },
+  {
+    "chunk_id": "train-1-chunk-2",
+    "doc_id": "train-1",
+    "title": "Cháo trắng Hàng Xanh",
+    "addresses": [
+      "Hẻm 283 Xô Viết Nghệ Tĩnh, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Cháo trắng Hàng Xanh. Địa chỉ: Hẻm 283 Xô Viết Nghệ Tĩnh, TP. Hồ Chí Minh. Chủ đề: an_toi. Điểm cộng của món ăn ở đây là bát cháo nóng hổi, được nấu nhừ, tỏa mùi thơm lá dứa. Các topping ăn kèm cũng vô cùng đa dạng, nào thịt kho tiêu, hột vịt muối, cá lóc kho cho đến các loại dưa mắm…"
+  },
+  {
+    "chunk_id": "train-1-chunk-3",
+    "doc_id": "train-1",
+    "title": "Cháo trắng Hàng Xanh",
+    "addresses": [
+      "Hẻm 283 Xô Viết Nghệ Tĩnh, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Cháo trắng Hàng Xanh. Địa chỉ: Hẻm 283 Xô Viết Nghệ Tĩnh, TP. Hồ Chí Minh. Chủ đề: an_toi. Các topping ăn kèm cũng vô cùng đa dạng, nào thịt kho tiêu, hột vịt muối, cá lóc kho cho đến các loại dưa mắm… Đêm Sài Gòn se se lạnh mà được thưởng thức bát cháo nóng hổi thì còn gì ấm bụng bằng"
+  },
+  {
+    "chunk_id": "train-1-chunk-4",
+    "doc_id": "train-1",
+    "title": "Cháo trắng Hàng Xanh",
+    "addresses": [
+      "Hẻm 283 Xô Viết Nghệ Tĩnh, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Cháo trắng Hàng Xanh. Địa chỉ: Hẻm 283 Xô Viết Nghệ Tĩnh, TP. Hồ Chí Minh. Chủ đề: an_toi. Đêm Sài Gòn se se lạnh mà được thưởng thức bát cháo nóng hổi thì còn gì ấm bụng bằng"
+  },
+  {
+    "chunk_id": "train-2-chunk-1",
+    "doc_id": "train-2",
+    "title": "The Deck Saigon – địa chỉ ăn tối lãng mạn ở Sài Gòn",
+    "addresses": [
+      "38 Nguyễn Ư Dĩ, TP. Hồ Chí Minh"
+    ],
+    "category": "lang_man",
+    "order": 1,
+    "text": "The Deck Saigon – địa chỉ ăn tối lãng mạn ở Sài Gòn. Địa chỉ: 38 Nguyễn Ư Dĩ, TP. Hồ Chí Minh. Chủ đề: lang_man. Nếu bạn chưa biết buổi tối ăn gì ở Sài Gòn thì có thể ghé nhà hàng The Deck Saigon nằm ngay bên bờ sông Sài Gòn lộng gió. Với không gian thoáng mát cùng nội thất hiện đại đến đây bạn sẽ được tận hưởng bữa tối lãng mạn cùng gia đình, bạn bè."
+  },
+  {
+    "chunk_id": "train-2-chunk-2",
+    "doc_id": "train-2",
+    "title": "The Deck Saigon – địa chỉ ăn tối lãng mạn ở Sài Gòn",
+    "addresses": [
+      "38 Nguyễn Ư Dĩ, TP. Hồ Chí Minh"
+    ],
+    "category": "lang_man",
+    "order": 2,
+    "text": "The Deck Saigon – địa chỉ ăn tối lãng mạn ở Sài Gòn. Địa chỉ: 38 Nguyễn Ư Dĩ, TP. Hồ Chí Minh. Chủ đề: lang_man. Với không gian thoáng mát cùng nội thất hiện đại đến đây bạn sẽ được tận hưởng bữa tối lãng mạn cùng gia đình, bạn bè. The Deck Saigon mang đến thực đơn phong phú với đủ các món từ Âu đến Á."
+  },
+  {
+    "chunk_id": "train-2-chunk-3",
+    "doc_id": "train-2",
+    "title": "The Deck Saigon – địa chỉ ăn tối lãng mạn ở Sài Gòn",
+    "addresses": [
+      "38 Nguyễn Ư Dĩ, TP. Hồ Chí Minh"
+    ],
+    "category": "lang_man",
+    "order": 3,
+    "text": "The Deck Saigon – địa chỉ ăn tối lãng mạn ở Sài Gòn. Địa chỉ: 38 Nguyễn Ư Dĩ, TP. Hồ Chí Minh. Chủ đề: lang_man. The Deck Saigon mang đến thực đơn phong phú với đủ các món từ Âu đến Á. Mỗi món ăn đều được chế biến tỉ mỉ, mang đến hương vị thơm ngon hấp dẫn."
+  },
+  {
+    "chunk_id": "train-2-chunk-4",
+    "doc_id": "train-2",
+    "title": "The Deck Saigon – địa chỉ ăn tối lãng mạn ở Sài Gòn",
+    "addresses": [
+      "38 Nguyễn Ư Dĩ, TP. Hồ Chí Minh"
+    ],
+    "category": "lang_man",
+    "order": 4,
+    "text": "The Deck Saigon – địa chỉ ăn tối lãng mạn ở Sài Gòn. Địa chỉ: 38 Nguyễn Ư Dĩ, TP. Hồ Chí Minh. Chủ đề: lang_man. Mỗi món ăn đều được chế biến tỉ mỉ, mang đến hương vị thơm ngon hấp dẫn."
+  },
+  {
+    "chunk_id": "train-3-chunk-1",
+    "doc_id": "train-3",
+    "title": "Tối ăn gì ở Sài Gòn? Mì cay khuya",
+    "addresses": [
+      "Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Tối ăn gì ở Sài Gòn? Mì cay khuya. Địa chỉ: Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh. Chủ đề: an_toi. Nhắc đến địa chỉ ăn tối Sài Gòn ngon thì chắc chắn không thể bỏ qua quán mì cay khuya. Đây là một trong những quán mì cay ngon khét tiếng, được giới trẻ sành ăn ở Sài Gòn vô cùng yêu thích."
+  },
+  {
+    "chunk_id": "train-3-chunk-2",
+    "doc_id": "train-3",
+    "title": "Tối ăn gì ở Sài Gòn? Mì cay khuya",
+    "addresses": [
+      "Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Tối ăn gì ở Sài Gòn? Mì cay khuya. Địa chỉ: Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh. Chủ đề: an_toi. Đây là một trong những quán mì cay ngon khét tiếng, được giới trẻ sành ăn ở Sài Gòn vô cùng yêu thích. Tô mì bò được bày biện vô cùng ngon mắt."
+  },
+  {
+    "chunk_id": "train-3-chunk-3",
+    "doc_id": "train-3",
+    "title": "Tối ăn gì ở Sài Gòn? Mì cay khuya",
+    "addresses": [
+      "Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Tối ăn gì ở Sài Gòn? Mì cay khuya. Địa chỉ: Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh. Chủ đề: an_toi. Tô mì bò được bày biện vô cùng ngon mắt. Thịt bò mềm tan, không hề bị dai, nước sốt vừa vặn, cay cay khiến bạn vừa ăn vừa xuýt xoa."
+  },
+  {
+    "chunk_id": "train-3-chunk-4",
+    "doc_id": "train-3",
+    "title": "Tối ăn gì ở Sài Gòn? Mì cay khuya",
+    "addresses": [
+      "Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Tối ăn gì ở Sài Gòn? Mì cay khuya. Địa chỉ: Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh. Chủ đề: an_toi. Thịt bò mềm tan, không hề bị dai, nước sốt vừa vặn, cay cay khiến bạn vừa ăn vừa xuýt xoa. Ngoài mì bò, bạn cũng có thể gọi mì trộn thập cẩm với đủ các loại hải sản như mực, tôm, cá viên…"
+  },
+  {
+    "chunk_id": "train-3-chunk-5",
+    "doc_id": "train-3",
+    "title": "Tối ăn gì ở Sài Gòn? Mì cay khuya",
+    "addresses": [
+      "Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 5,
+    "text": "Tối ăn gì ở Sài Gòn? Mì cay khuya. Địa chỉ: Hẻm 233/18 Nguyễn Trãi, TP. Hồ Chí Minh. Chủ đề: an_toi. Ngoài mì bò, bạn cũng có thể gọi mì trộn thập cẩm với đủ các loại hải sản như mực, tôm, cá viên…"
+  },
+  {
+    "chunk_id": "train-4-chunk-1",
+    "doc_id": "train-4",
+    "title": "Ngõ 8",
+    "addresses": [
+      "8 Cù Lao, TP. Hồ Chí Minh",
+      "57 Võ Văn Tần, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Ngõ 8. Địa chỉ: 8 Cù Lao, TP. Hồ Chí Minh; 57 Võ Văn Tần, TP. Hồ Chí Minh. Chủ đề: an_toi. Quán ăn tối Sài Gòn Ngõ 8 là địa chỉ lý tưởng để bạn thưởng thức ẩm thực Hà Nội giữa lòng Sài Gòn. Menu quán đa dạng, đầy đủ từ lẩu riêu cua, chả cá Lã Vọng cho đến ốc bươu nhồi thịt, nạc nọng nướng mắc mật…"
+  },
+  {
+    "chunk_id": "train-4-chunk-2",
+    "doc_id": "train-4",
+    "title": "Ngõ 8",
+    "addresses": [
+      "8 Cù Lao, TP. Hồ Chí Minh",
+      "57 Võ Văn Tần, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Ngõ 8. Địa chỉ: 8 Cù Lao, TP. Hồ Chí Minh; 57 Võ Văn Tần, TP. Hồ Chí Minh. Chủ đề: an_toi. Menu quán đa dạng, đầy đủ từ lẩu riêu cua, chả cá Lã Vọng cho đến ốc bươu nhồi thịt, nạc nọng nướng mắc mật… Món nào cũng đều thơm ngon, hấp dẫn."
+  },
+  {
+    "chunk_id": "train-4-chunk-3",
+    "doc_id": "train-4",
+    "title": "Ngõ 8",
+    "addresses": [
+      "8 Cù Lao, TP. Hồ Chí Minh",
+      "57 Võ Văn Tần, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Ngõ 8. Địa chỉ: 8 Cù Lao, TP. Hồ Chí Minh; 57 Võ Văn Tần, TP. Hồ Chí Minh. Chủ đề: an_toi. Món nào cũng đều thơm ngon, hấp dẫn. Thêm một điểm cộng của địa điểm ăn tối tại Sài Gòn này là không gian rộng, thông thoáng, nhân viên phục vụ nhiệt tình."
+  },
+  {
+    "chunk_id": "train-4-chunk-4",
+    "doc_id": "train-4",
+    "title": "Ngõ 8",
+    "addresses": [
+      "8 Cù Lao, TP. Hồ Chí Minh",
+      "57 Võ Văn Tần, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Ngõ 8. Địa chỉ: 8 Cù Lao, TP. Hồ Chí Minh; 57 Võ Văn Tần, TP. Hồ Chí Minh. Chủ đề: an_toi. Thêm một điểm cộng của địa điểm ăn tối tại Sài Gòn này là không gian rộng, thông thoáng, nhân viên phục vụ nhiệt tình."
+  },
+  {
+    "chunk_id": "train-5-chunk-1",
+    "doc_id": "train-5",
+    "title": "Quán Ụt Ụt – địa chỉ ăn tối Sài Gòn cực chất",
+    "addresses": [
+      "168 Võ Văn Kiệt, TP. Hồ Chí Minh",
+      "47 Xuân Thủy, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Quán Ụt Ụt – địa chỉ ăn tối Sài Gòn cực chất. Địa chỉ: 168 Võ Văn Kiệt, TP. Hồ Chí Minh; 47 Xuân Thủy, TP. Hồ Chí Minh. Chủ đề: an_toi. Ụt Ụt là một trong những quán nướng ngon ở Sài Gòn được lòng nhiều thực khách. Không chỉ sở hữu không gian sang trọng, tiện nghi mà chất lượng món ăn ở đây cũng xứng đáng điểm 10."
+  },
+  {
+    "chunk_id": "train-5-chunk-2",
+    "doc_id": "train-5",
+    "title": "Quán Ụt Ụt – địa chỉ ăn tối Sài Gòn cực chất",
+    "addresses": [
+      "168 Võ Văn Kiệt, TP. Hồ Chí Minh",
+      "47 Xuân Thủy, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Quán Ụt Ụt – địa chỉ ăn tối Sài Gòn cực chất. Địa chỉ: 168 Võ Văn Kiệt, TP. Hồ Chí Minh; 47 Xuân Thủy, TP. Hồ Chí Minh. Chủ đề: an_toi. Không chỉ sở hữu không gian sang trọng, tiện nghi mà chất lượng món ăn ở đây cũng xứng đáng điểm 10. Menu món nướng của Ụt Ụt vô cùng phong phú, trong đó best seller phải kể đến món sườn nướng tảng khổng lồ theo kiểu Mỹ."
+  },
+  {
+    "chunk_id": "train-5-chunk-3",
+    "doc_id": "train-5",
+    "title": "Quán Ụt Ụt – địa chỉ ăn tối Sài Gòn cực chất",
+    "addresses": [
+      "168 Võ Văn Kiệt, TP. Hồ Chí Minh",
+      "47 Xuân Thủy, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Quán Ụt Ụt – địa chỉ ăn tối Sài Gòn cực chất. Địa chỉ: 168 Võ Văn Kiệt, TP. Hồ Chí Minh; 47 Xuân Thủy, TP. Hồ Chí Minh. Chủ đề: an_toi. Menu món nướng của Ụt Ụt vô cùng phong phú, trong đó best seller phải kể đến món sườn nướng tảng khổng lồ theo kiểu Mỹ. Sườn được tẩm ướp theo công thức riêng, căn chỉnh nhiệt độ nướng phù hợp mang đến những miếng thịt thơm, mềm mọng, ăn một lần là “dính”."
+  },
+  {
+    "chunk_id": "train-5-chunk-4",
+    "doc_id": "train-5",
+    "title": "Quán Ụt Ụt – địa chỉ ăn tối Sài Gòn cực chất",
+    "addresses": [
+      "168 Võ Văn Kiệt, TP. Hồ Chí Minh",
+      "47 Xuân Thủy, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Quán Ụt Ụt – địa chỉ ăn tối Sài Gòn cực chất. Địa chỉ: 168 Võ Văn Kiệt, TP. Hồ Chí Minh; 47 Xuân Thủy, TP. Hồ Chí Minh. Chủ đề: an_toi. Sườn được tẩm ướp theo công thức riêng, căn chỉnh nhiệt độ nướng phù hợp mang đến những miếng thịt thơm, mềm mọng, ăn một lần là “dính”."
+  },
+  {
+    "chunk_id": "train-6-chunk-1",
+    "doc_id": "train-6",
+    "title": "Quán ăn Hữu Nghị – quán ăn tối Sài Gòn ngon rẻ",
+    "addresses": [
+      "149 Tùng Thiện Vương, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Quán ăn Hữu Nghị – quán ăn tối Sài Gòn ngon rẻ. Địa chỉ: 149 Tùng Thiện Vương, TP. Hồ Chí Minh. Chủ đề: an_toi. Địa chỉ tiếp theo trong danh sách 25 quán ăn tối Sài Gòn ngon, chất lượng là quán Hữu Nghị. Tại đây cung cấp nhiều món ăn ngon, trong đó đắt khách nhất vẫn là mực xào và lẩu thái."
+  },
+  {
+    "chunk_id": "train-6-chunk-2",
+    "doc_id": "train-6",
+    "title": "Quán ăn Hữu Nghị – quán ăn tối Sài Gòn ngon rẻ",
+    "addresses": [
+      "149 Tùng Thiện Vương, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Quán ăn Hữu Nghị – quán ăn tối Sài Gòn ngon rẻ. Địa chỉ: 149 Tùng Thiện Vương, TP. Hồ Chí Minh. Chủ đề: an_toi. Tại đây cung cấp nhiều món ăn ngon, trong đó đắt khách nhất vẫn là mực xào và lẩu thái. Nguyên liệu tại nhà hàng Hữu Nghị được chế biến tươi ngon, đảm bảo chất lượng."
+  },
+  {
+    "chunk_id": "train-6-chunk-3",
+    "doc_id": "train-6",
+    "title": "Quán ăn Hữu Nghị – quán ăn tối Sài Gòn ngon rẻ",
+    "addresses": [
+      "149 Tùng Thiện Vương, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Quán ăn Hữu Nghị – quán ăn tối Sài Gòn ngon rẻ. Địa chỉ: 149 Tùng Thiện Vương, TP. Hồ Chí Minh. Chủ đề: an_toi. Nguyên liệu tại nhà hàng Hữu Nghị được chế biến tươi ngon, đảm bảo chất lượng. Ngoài ra, giá thành các món ăn tại đây cũng phải chăng, nhân viên phục vụ nhanh nhẹn."
+  },
+  {
+    "chunk_id": "train-6-chunk-4",
+    "doc_id": "train-6",
+    "title": "Quán ăn Hữu Nghị – quán ăn tối Sài Gòn ngon rẻ",
+    "addresses": [
+      "149 Tùng Thiện Vương, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Quán ăn Hữu Nghị – quán ăn tối Sài Gòn ngon rẻ. Địa chỉ: 149 Tùng Thiện Vương, TP. Hồ Chí Minh. Chủ đề: an_toi. Ngoài ra, giá thành các món ăn tại đây cũng phải chăng, nhân viên phục vụ nhanh nhẹn."
+  },
+  {
+    "chunk_id": "train-7-chunk-1",
+    "doc_id": "train-7",
+    "title": "Bún mắm Cô Ba – quán ăn tối ngon Sài Gòn",
+    "addresses": [
+      "451 Phan Huy Ích, TP. Hồ Chí Minh",
+      "523/8 Nguyễn Tri Phương, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Bún mắm Cô Ba – quán ăn tối ngon Sài Gòn. Địa chỉ: 451 Phan Huy Ích, TP. Hồ Chí Minh; 523/8 Nguyễn Tri Phương, TP. Hồ Chí Minh. Chủ đề: an_toi. Bún mắm Cô Ba là một trong những quán bún mắm Sài Gòn ngon nức tiếng gần xa. Một tô bún mắm ở đây đầy ú ụ với đa dạng topping nào mực ống, chả cá chiên, chả cá nhồi ớt, tôm, thịt heo quay…"
+  },
+  {
+    "chunk_id": "train-7-chunk-2",
+    "doc_id": "train-7",
+    "title": "Bún mắm Cô Ba – quán ăn tối ngon Sài Gòn",
+    "addresses": [
+      "451 Phan Huy Ích, TP. Hồ Chí Minh",
+      "523/8 Nguyễn Tri Phương, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Bún mắm Cô Ba – quán ăn tối ngon Sài Gòn. Địa chỉ: 451 Phan Huy Ích, TP. Hồ Chí Minh; 523/8 Nguyễn Tri Phương, TP. Hồ Chí Minh. Chủ đề: an_toi. Một tô bún mắm ở đây đầy ú ụ với đa dạng topping nào mực ống, chả cá chiên, chả cá nhồi ớt, tôm, thịt heo quay… Hương vị bún mắm Cô Ba đậm chất miền Tây với nước dùng đậm đà, thơm nức, nhiều loại rau ăn kèm."
+  },
+  {
+    "chunk_id": "train-7-chunk-3",
+    "doc_id": "train-7",
+    "title": "Bún mắm Cô Ba – quán ăn tối ngon Sài Gòn",
+    "addresses": [
+      "451 Phan Huy Ích, TP. Hồ Chí Minh",
+      "523/8 Nguyễn Tri Phương, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Bún mắm Cô Ba – quán ăn tối ngon Sài Gòn. Địa chỉ: 451 Phan Huy Ích, TP. Hồ Chí Minh; 523/8 Nguyễn Tri Phương, TP. Hồ Chí Minh. Chủ đề: an_toi. Hương vị bún mắm Cô Ba đậm chất miền Tây với nước dùng đậm đà, thơm nức, nhiều loại rau ăn kèm. Với món ăn chất lượng cùng không gian sạch sẽ, nơi đây trở thành địa chỉ ăn tối Sài Gòn được nhiều thực khách lui tới."
+  },
+  {
+    "chunk_id": "train-7-chunk-4",
+    "doc_id": "train-7",
+    "title": "Bún mắm Cô Ba – quán ăn tối ngon Sài Gòn",
+    "addresses": [
+      "451 Phan Huy Ích, TP. Hồ Chí Minh",
+      "523/8 Nguyễn Tri Phương, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Bún mắm Cô Ba – quán ăn tối ngon Sài Gòn. Địa chỉ: 451 Phan Huy Ích, TP. Hồ Chí Minh; 523/8 Nguyễn Tri Phương, TP. Hồ Chí Minh. Chủ đề: an_toi. Với món ăn chất lượng cùng không gian sạch sẽ, nơi đây trở thành địa chỉ ăn tối Sài Gòn được nhiều thực khách lui tới."
+  },
+  {
+    "chunk_id": "train-8-chunk-1",
+    "doc_id": "train-8",
+    "title": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ",
+    "addresses": [
+      "19 Ngô Văn Năm, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ. Địa chỉ: 19 Ngô Văn Năm, TP. Hồ Chí Minh. Chủ đề: an_toi. Bụi là quán ăn tối Sài Gòn mang đến cho thực khách những bữa cơm gia đình chuẩn “cơm mẹ nấu”. Menu của quán gồm 200 món ngon với phong vị riêng, được chọn lọc tinh tế từ Bắc – Trung – Nam mang đến nhiều sự lựa chọn cho thực khách."
+  },
+  {
+    "chunk_id": "train-8-chunk-2",
+    "doc_id": "train-8",
+    "title": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ",
+    "addresses": [
+      "19 Ngô Văn Năm, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ. Địa chỉ: 19 Ngô Văn Năm, TP. Hồ Chí Minh. Chủ đề: an_toi. Menu của quán gồm 200 món ngon với phong vị riêng, được chọn lọc tinh tế từ Bắc – Trung – Nam mang đến nhiều sự lựa chọn cho thực khách. Đến đây bạn có thể thưởng thức lươn om chuối, chả cá lã vọng…"
+  },
+  {
+    "chunk_id": "train-8-chunk-3",
+    "doc_id": "train-8",
+    "title": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ",
+    "addresses": [
+      "19 Ngô Văn Năm, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ. Địa chỉ: 19 Ngô Văn Năm, TP. Hồ Chí Minh. Chủ đề: an_toi. Đến đây bạn có thể thưởng thức lươn om chuối, chả cá lã vọng… của miền Bắc, bánh đa xúc hến, gỏi cuốn…"
+  },
+  {
+    "chunk_id": "train-8-chunk-4",
+    "doc_id": "train-8",
+    "title": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ",
+    "addresses": [
+      "19 Ngô Văn Năm, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ. Địa chỉ: 19 Ngô Văn Năm, TP. Hồ Chí Minh. Chủ đề: an_toi. của miền Bắc, bánh đa xúc hến, gỏi cuốn… của miền Trung hay kho quẹt, thịt kho tộ, ba rọi kho cơm dừa…"
+  },
+  {
+    "chunk_id": "train-8-chunk-5",
+    "doc_id": "train-8",
+    "title": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ",
+    "addresses": [
+      "19 Ngô Văn Năm, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 5,
+    "text": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ. Địa chỉ: 19 Ngô Văn Năm, TP. Hồ Chí Minh. Chủ đề: an_toi. của miền Trung hay kho quẹt, thịt kho tộ, ba rọi kho cơm dừa… của miền Nam."
+  },
+  {
+    "chunk_id": "train-8-chunk-6",
+    "doc_id": "train-8",
+    "title": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ",
+    "addresses": [
+      "19 Ngô Văn Năm, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 6,
+    "text": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ. Địa chỉ: 19 Ngô Văn Năm, TP. Hồ Chí Minh. Chủ đề: an_toi. của miền Nam. Không gian quán ăn tối ở Sài Gòn này được thiết kế theo phong cách Indochine mang đến sự ấm áp, gần gũi."
+  },
+  {
+    "chunk_id": "train-8-chunk-7",
+    "doc_id": "train-8",
+    "title": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ",
+    "addresses": [
+      "19 Ngô Văn Năm, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 7,
+    "text": "Quán Bụi – địa điểm ăn tối ở Sài Gòn yêu thích của giới trẻ. Địa chỉ: 19 Ngô Văn Năm, TP. Hồ Chí Minh. Chủ đề: an_toi. Không gian quán ăn tối ở Sài Gòn này được thiết kế theo phong cách Indochine mang đến sự ấm áp, gần gũi."
+  },
+  {
+    "chunk_id": "train-9-chunk-1",
+    "doc_id": "train-9",
+    "title": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử",
+    "addresses": [
+      "Nguyễn Thị Thập, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử. Địa chỉ: Nguyễn Thị Thập, TP. Hồ Chí Minh. Chủ đề: an_toi. Bánh tráng kẹp Dì Hoa là một trong những món ăn vặt Sài Gòn được người dân địa phương và du khách vô cùng yêu thích. Hàng bánh tráng kẹp này mang hương vị đặc trưng của Đà Nẵng."
+  },
+  {
+    "chunk_id": "train-9-chunk-2",
+    "doc_id": "train-9",
+    "title": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử",
+    "addresses": [
+      "Nguyễn Thị Thập, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử. Địa chỉ: Nguyễn Thị Thập, TP. Hồ Chí Minh. Chủ đề: an_toi. Hàng bánh tráng kẹp này mang hương vị đặc trưng của Đà Nẵng. Quán có hai loại là bánh tráng giòn và mềm."
+  },
+  {
+    "chunk_id": "train-9-chunk-3",
+    "doc_id": "train-9",
+    "title": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử",
+    "addresses": [
+      "Nguyễn Thị Thập, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử. Địa chỉ: Nguyễn Thị Thập, TP. Hồ Chí Minh. Chủ đề: an_toi. Quán có hai loại là bánh tráng giòn và mềm. Bánh tráng kẹp giòn có đủ hành lá, pate, ruốc, trứng cút lòng đào."
+  },
+  {
+    "chunk_id": "train-9-chunk-4",
+    "doc_id": "train-9",
+    "title": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử",
+    "addresses": [
+      "Nguyễn Thị Thập, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử. Địa chỉ: Nguyễn Thị Thập, TP. Hồ Chí Minh. Chủ đề: an_toi. Bánh tráng kẹp giòn có đủ hành lá, pate, ruốc, trứng cút lòng đào. Vỏ bánh bên ngoài giòn tan, bên trong có vị béo của trứng, mùi thơm của hành lá, ăn kèm là sốt bò vô cùng hấp dẫn."
+  },
+  {
+    "chunk_id": "train-9-chunk-5",
+    "doc_id": "train-9",
+    "title": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử",
+    "addresses": [
+      "Nguyễn Thị Thập, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 5,
+    "text": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử. Địa chỉ: Nguyễn Thị Thập, TP. Hồ Chí Minh. Chủ đề: an_toi. Vỏ bánh bên ngoài giòn tan, bên trong có vị béo của trứng, mùi thơm của hành lá, ăn kèm là sốt bò vô cùng hấp dẫn. Nếu bạn đang muốn tìm đồ ăn tối Sài Gòn để lót bụng thì bánh tráng kẹp Dì Hoa là sự lựa chọn không tồi!"
+  },
+  {
+    "chunk_id": "train-9-chunk-6",
+    "doc_id": "train-9",
+    "title": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử",
+    "addresses": [
+      "Nguyễn Thị Thập, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 6,
+    "text": "Bánh tráng kẹp Dì Hoa – món ăn vặt tối Sài Gòn nên thử. Địa chỉ: Nguyễn Thị Thập, TP. Hồ Chí Minh. Chủ đề: an_toi. Nếu bạn đang muốn tìm đồ ăn tối Sài Gòn để lót bụng thì bánh tráng kẹp Dì Hoa là sự lựa chọn không tồi!"
+  },
+  {
+    "chunk_id": "train-10-chunk-1",
+    "doc_id": "train-10",
+    "title": "Lẩu gà ớt hiểm 109",
+    "addresses": [
+      "129 Trần Huy Liệu, TP. Hồ Chí Minh",
+      "109/6 Nguyễn Thiện Thuật, TP. Hồ Chí Minh",
+      "19 Phạm Ngũ Lão, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Lẩu gà ớt hiểm 109. Địa chỉ: 129 Trần Huy Liệu, TP. Hồ Chí Minh; 109/6 Nguyễn Thiện Thuật, TP. Hồ Chí Minh; 19 Phạm Ngũ Lão, TP. Hồ Chí Minh. Chủ đề: an_toi. Lẩu gà ớt hiểm 109 cũng là một trong những địa chỉ ăn tối Sài Gòn ngon, chất lượng mà bạn không thể bỏ qua. Quán ăn này từ lâu đã được giới sành ăn ở Sài thành truyền tai nhau bởi hưởng vị đậm đà, thơm ngon, được chế biến vô cùng công phu."
+  },
+  {
+    "chunk_id": "train-10-chunk-2",
+    "doc_id": "train-10",
+    "title": "Lẩu gà ớt hiểm 109",
+    "addresses": [
+      "129 Trần Huy Liệu, TP. Hồ Chí Minh",
+      "109/6 Nguyễn Thiện Thuật, TP. Hồ Chí Minh",
+      "19 Phạm Ngũ Lão, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Lẩu gà ớt hiểm 109. Địa chỉ: 129 Trần Huy Liệu, TP. Hồ Chí Minh; 109/6 Nguyễn Thiện Thuật, TP. Hồ Chí Minh; 19 Phạm Ngũ Lão, TP. Hồ Chí Minh. Chủ đề: an_toi. Quán ăn này từ lâu đã được giới sành ăn ở Sài thành truyền tai nhau bởi hưởng vị đậm đà, thơm ngon, được chế biến vô cùng công phu. Gà trước khi mang nấu lẩu được chiên qua nên thịt dai, thơm, mềm, sau đó tiềm cùng với ớt hiểm, kỳ tử mang đến món ăn vô cùng hấp dẫn."
+  },
+  {
+    "chunk_id": "train-10-chunk-3",
+    "doc_id": "train-10",
+    "title": "Lẩu gà ớt hiểm 109",
+    "addresses": [
+      "129 Trần Huy Liệu, TP. Hồ Chí Minh",
+      "109/6 Nguyễn Thiện Thuật, TP. Hồ Chí Minh",
+      "19 Phạm Ngũ Lão, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Lẩu gà ớt hiểm 109. Địa chỉ: 129 Trần Huy Liệu, TP. Hồ Chí Minh; 109/6 Nguyễn Thiện Thuật, TP. Hồ Chí Minh; 19 Phạm Ngũ Lão, TP. Hồ Chí Minh. Chủ đề: an_toi. Gà trước khi mang nấu lẩu được chiên qua nên thịt dai, thơm, mềm, sau đó tiềm cùng với ớt hiểm, kỳ tử mang đến món ăn vô cùng hấp dẫn. Ngoài gà lẩu, bạn cũng có thể thưởng thức thêm món gà nướng."
+  },
+  {
+    "chunk_id": "train-10-chunk-4",
+    "doc_id": "train-10",
+    "title": "Lẩu gà ớt hiểm 109",
+    "addresses": [
+      "129 Trần Huy Liệu, TP. Hồ Chí Minh",
+      "109/6 Nguyễn Thiện Thuật, TP. Hồ Chí Minh",
+      "19 Phạm Ngũ Lão, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Lẩu gà ớt hiểm 109. Địa chỉ: 129 Trần Huy Liệu, TP. Hồ Chí Minh; 109/6 Nguyễn Thiện Thuật, TP. Hồ Chí Minh; 19 Phạm Ngũ Lão, TP. Hồ Chí Minh. Chủ đề: an_toi. Ngoài gà lẩu, bạn cũng có thể thưởng thức thêm món gà nướng."
+  },
+  {
+    "chunk_id": "train-11-chunk-1",
+    "doc_id": "train-11",
+    "title": "Bò 7 Món Au Pagolac – quán ăn tối Sài Gòn không nên bỏ lỡ",
+    "addresses": [
+      "C7/7 A2 Đường Phạm Hùng, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Bò 7 Món Au Pagolac – quán ăn tối Sài Gòn không nên bỏ lỡ. Địa chỉ: C7/7 A2 Đường Phạm Hùng, TP. Hồ Chí Minh. Chủ đề: an_toi. Nhà hàng Bò 7 Món – Au Pagolac là một trong những nhà hàng ăn tối ở Sài Gòn ngon, chất lượng. Đến đây, chắc chắn bạn không thể bỏ qua cơ hội thưởng thức 7 món bò hấp dẫn được chế biến theo khẩu vị truyền thống Việt Nam gồm: bò nướng lá lốt, bò nướng cuộn phô mai, bò nướng mỡ chài, bò lúc lắc, bò nhúng giấm, bò bít tế, chả đùm và cháo bò."
+  },
+  {
+    "chunk_id": "train-11-chunk-2",
+    "doc_id": "train-11",
+    "title": "Bò 7 Món Au Pagolac – quán ăn tối Sài Gòn không nên bỏ lỡ",
+    "addresses": [
+      "C7/7 A2 Đường Phạm Hùng, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Bò 7 Món Au Pagolac – quán ăn tối Sài Gòn không nên bỏ lỡ. Địa chỉ: C7/7 A2 Đường Phạm Hùng, TP. Hồ Chí Minh. Chủ đề: an_toi. Đến đây, chắc chắn bạn không thể bỏ qua cơ hội thưởng thức 7 món bò hấp dẫn được chế biến theo khẩu vị truyền thống Việt Nam gồm: bò nướng lá lốt, bò nướng cuộn phô mai, bò nướng mỡ chài, bò lúc lắc, bò nhúng giấm, bò bít tế, chả đùm và cháo bò. Mỗi món ăn đều có hương vị riêng, mang đến bữa ăn tối Sài Gòn trọn vẹn cho thực khách."
+  },
+  {
+    "chunk_id": "train-11-chunk-3",
+    "doc_id": "train-11",
+    "title": "Bò 7 Món Au Pagolac – quán ăn tối Sài Gòn không nên bỏ lỡ",
+    "addresses": [
+      "C7/7 A2 Đường Phạm Hùng, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Bò 7 Món Au Pagolac – quán ăn tối Sài Gòn không nên bỏ lỡ. Địa chỉ: C7/7 A2 Đường Phạm Hùng, TP. Hồ Chí Minh. Chủ đề: an_toi. Mỗi món ăn đều có hương vị riêng, mang đến bữa ăn tối Sài Gòn trọn vẹn cho thực khách."
+  },
+  {
+    "chunk_id": "train-12-chunk-1",
+    "doc_id": "train-12",
+    "title": "Gà Cơ Bắp – quán ăn tối ngon ở Sài Gòn",
+    "addresses": [
+      "171B Trần Văn Đang, TP. Hồ Chí Minh",
+      "947 Hoàng Sa, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Gà Cơ Bắp – quán ăn tối ngon ở Sài Gòn. Địa chỉ: 171B Trần Văn Đang, TP. Hồ Chí Minh; 947 Hoàng Sa, TP. Hồ Chí Minh. Chủ đề: an_toi. Nếu bạn là fan của các món ăn được chế biến từ Gà thì có thể lựa chọn ăn tối Sài Gòn tại quán Gà Cơ Bắp. Thịt gà ở đây được team sành ăn đánh giá cao bởi độ săn chắc và cách nêm nếm gia vị độc đáo."
+  },
+  {
+    "chunk_id": "train-12-chunk-2",
+    "doc_id": "train-12",
+    "title": "Gà Cơ Bắp – quán ăn tối ngon ở Sài Gòn",
+    "addresses": [
+      "171B Trần Văn Đang, TP. Hồ Chí Minh",
+      "947 Hoàng Sa, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Gà Cơ Bắp – quán ăn tối ngon ở Sài Gòn. Địa chỉ: 171B Trần Văn Đang, TP. Hồ Chí Minh; 947 Hoàng Sa, TP. Hồ Chí Minh. Chủ đề: an_toi. Thịt gà ở đây được team sành ăn đánh giá cao bởi độ săn chắc và cách nêm nếm gia vị độc đáo. Menu quán phong phú với nhiều món ngon từ gà như: gà xé tói, gà lên mâm, xôi xà, gà ta nướng chao, gà rang muối, lòng gà trứng non, chân gà rang muối…"
+  },
+  {
+    "chunk_id": "train-12-chunk-3",
+    "doc_id": "train-12",
+    "title": "Gà Cơ Bắp – quán ăn tối ngon ở Sài Gòn",
+    "addresses": [
+      "171B Trần Văn Đang, TP. Hồ Chí Minh",
+      "947 Hoàng Sa, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Gà Cơ Bắp – quán ăn tối ngon ở Sài Gòn. Địa chỉ: 171B Trần Văn Đang, TP. Hồ Chí Minh; 947 Hoàng Sa, TP. Hồ Chí Minh. Chủ đề: an_toi. Menu quán phong phú với nhiều món ngon từ gà như: gà xé tói, gà lên mâm, xôi xà, gà ta nướng chao, gà rang muối, lòng gà trứng non, chân gà rang muối… Thêm một điểm cộng của quán là các loại sốt chua ngọt ở đây được pha chế theo công thức độc quyền khiến món ăn càng thêm hấp dẫn."
+  },
+  {
+    "chunk_id": "train-12-chunk-4",
+    "doc_id": "train-12",
+    "title": "Gà Cơ Bắp – quán ăn tối ngon ở Sài Gòn",
+    "addresses": [
+      "171B Trần Văn Đang, TP. Hồ Chí Minh",
+      "947 Hoàng Sa, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Gà Cơ Bắp – quán ăn tối ngon ở Sài Gòn. Địa chỉ: 171B Trần Văn Đang, TP. Hồ Chí Minh; 947 Hoàng Sa, TP. Hồ Chí Minh. Chủ đề: an_toi. Thêm một điểm cộng của quán là các loại sốt chua ngọt ở đây được pha chế theo công thức độc quyền khiến món ăn càng thêm hấp dẫn."
+  },
+  {
+    "chunk_id": "train-13-chunk-1",
+    "doc_id": "train-13",
+    "title": "Lin Food & Beer",
+    "addresses": [
+      "97/11 Kinh Dương Vương, TP. Hồ Chí Minh",
+      "376 Chợ Lớn, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Lin Food & Beer. Địa chỉ: 97/11 Kinh Dương Vương, TP. Hồ Chí Minh; 376 Chợ Lớn, TP. Hồ Chí Minh. Chủ đề: an_toi. Nếu bạn muốn tìm một không gian thông thoáng, thoải mái để ăn tối Sài Gòn cùng bạn bè thì hãy ghé ngay Lin Food & Beer. Quán mở cửa từ chiều đến tối muộn với nhiều đồ “nhắm” siêu ngon, thích hợp để nhậu lai rai."
+  },
+  {
+    "chunk_id": "train-13-chunk-2",
+    "doc_id": "train-13",
+    "title": "Lin Food & Beer",
+    "addresses": [
+      "97/11 Kinh Dương Vương, TP. Hồ Chí Minh",
+      "376 Chợ Lớn, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Lin Food & Beer. Địa chỉ: 97/11 Kinh Dương Vương, TP. Hồ Chí Minh; 376 Chợ Lớn, TP. Hồ Chí Minh. Chủ đề: an_toi. Quán mở cửa từ chiều đến tối muộn với nhiều đồ “nhắm” siêu ngon, thích hợp để nhậu lai rai. Quán được trang trí theo phong cách đường phố với chỗ ngồi rộng, thoáng mát."
+  },
+  {
+    "chunk_id": "train-13-chunk-3",
+    "doc_id": "train-13",
+    "title": "Lin Food & Beer",
+    "addresses": [
+      "97/11 Kinh Dương Vương, TP. Hồ Chí Minh",
+      "376 Chợ Lớn, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Lin Food & Beer. Địa chỉ: 97/11 Kinh Dương Vương, TP. Hồ Chí Minh; 376 Chợ Lớn, TP. Hồ Chí Minh. Chủ đề: an_toi. Quán được trang trí theo phong cách đường phố với chỗ ngồi rộng, thoáng mát. Menu đa dạng với đầy đủ các món ăn từ thịt cho đến hải sản, tha hồ để thực khách lựa chọn."
+  },
+  {
+    "chunk_id": "train-13-chunk-4",
+    "doc_id": "train-13",
+    "title": "Lin Food & Beer",
+    "addresses": [
+      "97/11 Kinh Dương Vương, TP. Hồ Chí Minh",
+      "376 Chợ Lớn, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Lin Food & Beer. Địa chỉ: 97/11 Kinh Dương Vương, TP. Hồ Chí Minh; 376 Chợ Lớn, TP. Hồ Chí Minh. Chủ đề: an_toi. Menu đa dạng với đầy đủ các món ăn từ thịt cho đến hải sản, tha hồ để thực khách lựa chọn."
+  },
+  {
+    "chunk_id": "train-14-chunk-1",
+    "doc_id": "train-14",
+    "title": "Cháo sườn Chú Chen",
+    "addresses": [
+      "281 Nguyễn Trãi, TP. Hồ Chí Minh",
+      "111 Tân Sơn Nhì, TP. Hồ Chí Minh",
+      "261 Lâm Văn Bền, TP. Hồ Chí Minh",
+      "53 Tô Hiến Thành, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Cháo sườn Chú Chen. Địa chỉ: 281 Nguyễn Trãi, TP. Hồ Chí Minh; 111 Tân Sơn Nhì, TP. Hồ Chí Minh; 261 Lâm Văn Bền, TP. Hồ Chí Minh; 53 Tô Hiến Thành, TP. Hồ Chí Minh. Chủ đề: an_toi. Landmark 3, Vinhomes Tân Cảng, TP. Hồ Chí Minh Cháo sườn Chú Chen là địa chỉ ăn tối Sài Gòn không còn quá xa lạ với người dân địa phương và khách du lịch."
+  },
+  {
+    "chunk_id": "train-14-chunk-2",
+    "doc_id": "train-14",
+    "title": "Cháo sườn Chú Chen",
+    "addresses": [
+      "281 Nguyễn Trãi, TP. Hồ Chí Minh",
+      "111 Tân Sơn Nhì, TP. Hồ Chí Minh",
+      "261 Lâm Văn Bền, TP. Hồ Chí Minh",
+      "53 Tô Hiến Thành, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Cháo sườn Chú Chen. Địa chỉ: 281 Nguyễn Trãi, TP. Hồ Chí Minh; 111 Tân Sơn Nhì, TP. Hồ Chí Minh; 261 Lâm Văn Bền, TP. Hồ Chí Minh; 53 Tô Hiến Thành, TP. Hồ Chí Minh. Chủ đề: an_toi. Hồ Chí Minh Cháo sườn Chú Chen là địa chỉ ăn tối Sài Gòn không còn quá xa lạ với người dân địa phương và khách du lịch. Menu quán gồm cháo sườn, cháo nấm, cháo hải sản, tuy nhiên bán chạy nhất vẫn là cháo sườn."
+  },
+  {
+    "chunk_id": "train-14-chunk-3",
+    "doc_id": "train-14",
+    "title": "Cháo sườn Chú Chen",
+    "addresses": [
+      "281 Nguyễn Trãi, TP. Hồ Chí Minh",
+      "111 Tân Sơn Nhì, TP. Hồ Chí Minh",
+      "261 Lâm Văn Bền, TP. Hồ Chí Minh",
+      "53 Tô Hiến Thành, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Cháo sườn Chú Chen. Địa chỉ: 281 Nguyễn Trãi, TP. Hồ Chí Minh; 111 Tân Sơn Nhì, TP. Hồ Chí Minh; 261 Lâm Văn Bền, TP. Hồ Chí Minh; 53 Tô Hiến Thành, TP. Hồ Chí Minh. Chủ đề: an_toi. Menu quán gồm cháo sườn, cháo nấm, cháo hải sản, tuy nhiên bán chạy nhất vẫn là cháo sườn. Cháo được hầm kỹ mang đến vị ngọt đặc trưng, thịt sườn mềm, được tẩm gia vị vừa vặn."
+  },
+  {
+    "chunk_id": "train-14-chunk-4",
+    "doc_id": "train-14",
+    "title": "Cháo sườn Chú Chen",
+    "addresses": [
+      "281 Nguyễn Trãi, TP. Hồ Chí Minh",
+      "111 Tân Sơn Nhì, TP. Hồ Chí Minh",
+      "261 Lâm Văn Bền, TP. Hồ Chí Minh",
+      "53 Tô Hiến Thành, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Cháo sườn Chú Chen. Địa chỉ: 281 Nguyễn Trãi, TP. Hồ Chí Minh; 111 Tân Sơn Nhì, TP. Hồ Chí Minh; 261 Lâm Văn Bền, TP. Hồ Chí Minh; 53 Tô Hiến Thành, TP. Hồ Chí Minh. Chủ đề: an_toi. Cháo được hầm kỹ mang đến vị ngọt đặc trưng, thịt sườn mềm, được tẩm gia vị vừa vặn. Bát cháo nóng hổi được rắc thêm chút tiêu và hành lá tỏa mùi thơm nức mũi."
+  },
+  {
+    "chunk_id": "train-14-chunk-5",
+    "doc_id": "train-14",
+    "title": "Cháo sườn Chú Chen",
+    "addresses": [
+      "281 Nguyễn Trãi, TP. Hồ Chí Minh",
+      "111 Tân Sơn Nhì, TP. Hồ Chí Minh",
+      "261 Lâm Văn Bền, TP. Hồ Chí Minh",
+      "53 Tô Hiến Thành, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 5,
+    "text": "Cháo sườn Chú Chen. Địa chỉ: 281 Nguyễn Trãi, TP. Hồ Chí Minh; 111 Tân Sơn Nhì, TP. Hồ Chí Minh; 261 Lâm Văn Bền, TP. Hồ Chí Minh; 53 Tô Hiến Thành, TP. Hồ Chí Minh. Chủ đề: an_toi. Bát cháo nóng hổi được rắc thêm chút tiêu và hành lá tỏa mùi thơm nức mũi."
+  },
+  {
+    "chunk_id": "train-15-chunk-1",
+    "doc_id": "train-15",
+    "title": "Phá lấu Rubi – quán ăn tối Sài Gòn được thực khách đánh giá cao",
+    "addresses": [
+      "230 Nguyễn Hồng Đào, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Phá lấu Rubi – quán ăn tối Sài Gòn được thực khách đánh giá cao. Địa chỉ: 230 Nguyễn Hồng Đào, TP. Hồ Chí Minh. Chủ đề: an_toi. Nhắc đến các quán phá lấu bò Sài Gòn ngon thì làm sao có thể bỏ qua phá lấu Rubi. Tại đây có đầy đủ các món phá lấu để thực khách tha hồ lựa chọn như: lá lấu chiên, phá lấu trộn, phá lấu nướng sate, mì gói phá lấu, hủ tiếu phá lấu…"
+  },
+  {
+    "chunk_id": "train-15-chunk-2",
+    "doc_id": "train-15",
+    "title": "Phá lấu Rubi – quán ăn tối Sài Gòn được thực khách đánh giá cao",
+    "addresses": [
+      "230 Nguyễn Hồng Đào, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Phá lấu Rubi – quán ăn tối Sài Gòn được thực khách đánh giá cao. Địa chỉ: 230 Nguyễn Hồng Đào, TP. Hồ Chí Minh. Chủ đề: an_toi. Tại đây có đầy đủ các món phá lấu để thực khách tha hồ lựa chọn như: lá lấu chiên, phá lấu trộn, phá lấu nướng sate, mì gói phá lấu, hủ tiếu phá lấu… Theo review của nhiều thực khách, nước phá lấu của quán có vị vừa, béo nhẹ, ăn càng càng “ghiền”."
+  },
+  {
+    "chunk_id": "train-15-chunk-3",
+    "doc_id": "train-15",
+    "title": "Phá lấu Rubi – quán ăn tối Sài Gòn được thực khách đánh giá cao",
+    "addresses": [
+      "230 Nguyễn Hồng Đào, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Phá lấu Rubi – quán ăn tối Sài Gòn được thực khách đánh giá cao. Địa chỉ: 230 Nguyễn Hồng Đào, TP. Hồ Chí Minh. Chủ đề: an_toi. Theo review của nhiều thực khách, nước phá lấu của quán có vị vừa, béo nhẹ, ăn càng càng “ghiền”. Với menu đa dạng cùng món ăn hấp dẫn, phá lấu Rubi trở thành địa điểm ăn tối Sài Gòn quen thuộc của nhiều du khách."
+  },
+  {
+    "chunk_id": "train-15-chunk-4",
+    "doc_id": "train-15",
+    "title": "Phá lấu Rubi – quán ăn tối Sài Gòn được thực khách đánh giá cao",
+    "addresses": [
+      "230 Nguyễn Hồng Đào, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Phá lấu Rubi – quán ăn tối Sài Gòn được thực khách đánh giá cao. Địa chỉ: 230 Nguyễn Hồng Đào, TP. Hồ Chí Minh. Chủ đề: an_toi. Với menu đa dạng cùng món ăn hấp dẫn, phá lấu Rubi trở thành địa điểm ăn tối Sài Gòn quen thuộc của nhiều du khách."
+  },
+  {
+    "chunk_id": "train-16-chunk-1",
+    "doc_id": "train-16",
+    "title": "Ong Nâu Spaghetti",
+    "addresses": [
+      "67 Tân Quý, TP. Hồ Chí Minh",
+      "511 Lê Quang Định, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Ong Nâu Spaghetti. Địa chỉ: 67 Tân Quý, TP. Hồ Chí Minh; 511 Lê Quang Định, TP. Hồ Chí Minh. Chủ đề: an_toi. Nếu muốn đổi gió với các món Âu sang trọng, bạn có thể lựa chọn ăn tối Sài Gòn tại Ong Nâu Spaghetti. Nơi đây được mệnh danh là thiên đường ẩm thực Ý giữa lòng Sài thành – điểm đến lý tưởng để bạn thưởng thức các món ăn trứ danh như: Pizza, mì Ý, Beefsteak chuẩn vị."
+  },
+  {
+    "chunk_id": "train-16-chunk-2",
+    "doc_id": "train-16",
+    "title": "Ong Nâu Spaghetti",
+    "addresses": [
+      "67 Tân Quý, TP. Hồ Chí Minh",
+      "511 Lê Quang Định, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Ong Nâu Spaghetti. Địa chỉ: 67 Tân Quý, TP. Hồ Chí Minh; 511 Lê Quang Định, TP. Hồ Chí Minh. Chủ đề: an_toi. Nơi đây được mệnh danh là thiên đường ẩm thực Ý giữa lòng Sài thành – điểm đến lý tưởng để bạn thưởng thức các món ăn trứ danh như: Pizza, mì Ý, Beefsteak chuẩn vị. Từng món ăn được chế biến tỉ mỉ, nguyên liệu tươi sạch mang đến chất lượng hảo hạng nhất."
+  },
+  {
+    "chunk_id": "train-16-chunk-3",
+    "doc_id": "train-16",
+    "title": "Ong Nâu Spaghetti",
+    "addresses": [
+      "67 Tân Quý, TP. Hồ Chí Minh",
+      "511 Lê Quang Định, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Ong Nâu Spaghetti. Địa chỉ: 67 Tân Quý, TP. Hồ Chí Minh; 511 Lê Quang Định, TP. Hồ Chí Minh. Chủ đề: an_toi. Từng món ăn được chế biến tỉ mỉ, nguyên liệu tươi sạch mang đến chất lượng hảo hạng nhất."
+  },
+  {
+    "chunk_id": "train-17-chunk-1",
+    "doc_id": "train-17",
+    "title": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về",
+    "addresses": [
+      "160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh",
+      "175B Cao Thắng, TP. Hồ Chí Minh",
+      "1058 Quang Trung, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về. Địa chỉ: 160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh; 175B Cao Thắng, TP. Hồ Chí Minh; 1058 Quang Trung, TP. Hồ Chí Minh. Chủ đề: an_toi. Bò tơ Nhân Phát là một trong các quán ăn tối ngon ở Sài Gòn mà bạn không thể bỏ qua. Đây là chuỗi nhà hàng chuyên về các món ngon từ thịt bò tơ Tây Ninh – giống bò được nuôi thả tự nhiên nên thịt mềm mịn, thơm ngon."
+  },
+  {
+    "chunk_id": "train-17-chunk-2",
+    "doc_id": "train-17",
+    "title": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về",
+    "addresses": [
+      "160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh",
+      "175B Cao Thắng, TP. Hồ Chí Minh",
+      "1058 Quang Trung, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về. Địa chỉ: 160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh; 175B Cao Thắng, TP. Hồ Chí Minh; 1058 Quang Trung, TP. Hồ Chí Minh. Chủ đề: an_toi. Đây là chuỗi nhà hàng chuyên về các món ngon từ thịt bò tơ Tây Ninh – giống bò được nuôi thả tự nhiên nên thịt mềm mịn, thơm ngon. Nhờ cách chế biến độc đáo, các món ăn tại đây đều giữ được hương vị đậm đà của bò tơ."
+  },
+  {
+    "chunk_id": "train-17-chunk-3",
+    "doc_id": "train-17",
+    "title": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về",
+    "addresses": [
+      "160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh",
+      "175B Cao Thắng, TP. Hồ Chí Minh",
+      "1058 Quang Trung, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về. Địa chỉ: 160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh; 175B Cao Thắng, TP. Hồ Chí Minh; 1058 Quang Trung, TP. Hồ Chí Minh. Chủ đề: an_toi. Nhờ cách chế biến độc đáo, các món ăn tại đây đều giữ được hương vị đậm đà của bò tơ. Bạn có thể lựa chọn lẩu bò, bò tơ nướng tảng, cháo bò hoặc gỏi bò, đuôi bò hấp gừng…"
+  },
+  {
+    "chunk_id": "train-17-chunk-4",
+    "doc_id": "train-17",
+    "title": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về",
+    "addresses": [
+      "160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh",
+      "175B Cao Thắng, TP. Hồ Chí Minh",
+      "1058 Quang Trung, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về. Địa chỉ: 160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh; 175B Cao Thắng, TP. Hồ Chí Minh; 1058 Quang Trung, TP. Hồ Chí Minh. Chủ đề: an_toi. Bạn có thể lựa chọn lẩu bò, bò tơ nướng tảng, cháo bò hoặc gỏi bò, đuôi bò hấp gừng… Đây chắc chắn là địa chỉ ăn tối Sài Gòn chất lượng, lý tưởng, đáng đồng tiền bát gạo."
+  },
+  {
+    "chunk_id": "train-17-chunk-5",
+    "doc_id": "train-17",
+    "title": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về",
+    "addresses": [
+      "160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh",
+      "175B Cao Thắng, TP. Hồ Chí Minh",
+      "1058 Quang Trung, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 5,
+    "text": "Bò tơ Nhân Phát – địa điểm ăn tối Sài Gòn ngon quên lối về. Địa chỉ: 160 Đặng Nguyên Cẩn, TP. Hồ Chí Minh; 175B Cao Thắng, TP. Hồ Chí Minh; 1058 Quang Trung, TP. Hồ Chí Minh. Chủ đề: an_toi. Đây chắc chắn là địa chỉ ăn tối Sài Gòn chất lượng, lý tưởng, đáng đồng tiền bát gạo."
+  },
+  {
+    "chunk_id": "train-18-chunk-1",
+    "doc_id": "train-18",
+    "title": "Súp cua Hằng – món ăn tối Sài Gòn nhẹ bụng",
+    "addresses": [
+      "C200/18 Xóm Chiếu, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Súp cua Hằng – món ăn tối Sài Gòn nhẹ bụng. Địa chỉ: C200/18 Xóm Chiếu, TP. Hồ Chí Minh. Chủ đề: an_toi. Buổi tối Sài Gòn sẽ thật ấm bụng nếu được thưởng thức bát súp cua nóng hổi, thơm ngon tại quán Súp cua Hằng. Quán ăn tối Sài Gòn này được lòng thực khách bởi không gian thông thoáng, món ăn chất lượng."
+  },
+  {
+    "chunk_id": "train-18-chunk-2",
+    "doc_id": "train-18",
+    "title": "Súp cua Hằng – món ăn tối Sài Gòn nhẹ bụng",
+    "addresses": [
+      "C200/18 Xóm Chiếu, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Súp cua Hằng – món ăn tối Sài Gòn nhẹ bụng. Địa chỉ: C200/18 Xóm Chiếu, TP. Hồ Chí Minh. Chủ đề: an_toi. Quán ăn tối Sài Gòn này được lòng thực khách bởi không gian thông thoáng, món ăn chất lượng. Bên cạnh các nguyên liệu như trứng cút, thịt cua, trứng bắc thảo thì bát súp còn có bắp Mỹ ngọt thanh nên ăn rất ngon."
+  },
+  {
+    "chunk_id": "train-18-chunk-3",
+    "doc_id": "train-18",
+    "title": "Súp cua Hằng – món ăn tối Sài Gòn nhẹ bụng",
+    "addresses": [
+      "C200/18 Xóm Chiếu, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Súp cua Hằng – món ăn tối Sài Gòn nhẹ bụng. Địa chỉ: C200/18 Xóm Chiếu, TP. Hồ Chí Minh. Chủ đề: an_toi. Bên cạnh các nguyên liệu như trứng cút, thịt cua, trứng bắc thảo thì bát súp còn có bắp Mỹ ngọt thanh nên ăn rất ngon."
+  },
+  {
+    "chunk_id": "train-19-chunk-1",
+    "doc_id": "train-19",
+    "title": "Bánh canh cua 87 Trần Khắc Chân",
+    "addresses": [
+      "87 Trần Khắc Chân, TP. Hồ Chí Minh"
+    ],
+    "category": "tong_hop",
+    "order": 1,
+    "text": "Bánh canh cua 87 Trần Khắc Chân. Địa chỉ: 87 Trần Khắc Chân, TP. Hồ Chí Minh. Chủ đề: tong_hop. Bánh canh cua Sài Gòn 87 Trần Khắc Chân là quán tủ của nhiều thực khách sành ăn. Nước dùng của quán ngọt thanh, có trứng đánh nên vừa đậm vị lại có độ sền sệt như súp."
+  },
+  {
+    "chunk_id": "train-19-chunk-2",
+    "doc_id": "train-19",
+    "title": "Bánh canh cua 87 Trần Khắc Chân",
+    "addresses": [
+      "87 Trần Khắc Chân, TP. Hồ Chí Minh"
+    ],
+    "category": "tong_hop",
+    "order": 2,
+    "text": "Bánh canh cua 87 Trần Khắc Chân. Địa chỉ: 87 Trần Khắc Chân, TP. Hồ Chí Minh. Chủ đề: tong_hop. Nước dùng của quán ngọt thanh, có trứng đánh nên vừa đậm vị lại có độ sền sệt như súp. Sợi bánh canh dai mềm, dai rất đã miệng."
+  },
+  {
+    "chunk_id": "train-19-chunk-3",
+    "doc_id": "train-19",
+    "title": "Bánh canh cua 87 Trần Khắc Chân",
+    "addresses": [
+      "87 Trần Khắc Chân, TP. Hồ Chí Minh"
+    ],
+    "category": "tong_hop",
+    "order": 3,
+    "text": "Bánh canh cua 87 Trần Khắc Chân. Địa chỉ: 87 Trần Khắc Chân, TP. Hồ Chí Minh. Chủ đề: tong_hop. Sợi bánh canh dai mềm, dai rất đã miệng. Topping gồm thịt cua dày, tôm, thịt nạc, huyết, chả, trứng cút, bánh phồng chiên."
+  },
+  {
+    "chunk_id": "train-19-chunk-4",
+    "doc_id": "train-19",
+    "title": "Bánh canh cua 87 Trần Khắc Chân",
+    "addresses": [
+      "87 Trần Khắc Chân, TP. Hồ Chí Minh"
+    ],
+    "category": "tong_hop",
+    "order": 4,
+    "text": "Bánh canh cua 87 Trần Khắc Chân. Địa chỉ: 87 Trần Khắc Chân, TP. Hồ Chí Minh. Chủ đề: tong_hop. Topping gồm thịt cua dày, tôm, thịt nạc, huyết, chả, trứng cút, bánh phồng chiên. Thưởng thức bánh canh cua 87 Trần Khắc Chân chắc chắn bạn sẽ “kết” ngay từ lần đầu."
+  },
+  {
+    "chunk_id": "train-19-chunk-5",
+    "doc_id": "train-19",
+    "title": "Bánh canh cua 87 Trần Khắc Chân",
+    "addresses": [
+      "87 Trần Khắc Chân, TP. Hồ Chí Minh"
+    ],
+    "category": "tong_hop",
+    "order": 5,
+    "text": "Bánh canh cua 87 Trần Khắc Chân. Địa chỉ: 87 Trần Khắc Chân, TP. Hồ Chí Minh. Chủ đề: tong_hop. Thưởng thức bánh canh cua 87 Trần Khắc Chân chắc chắn bạn sẽ “kết” ngay từ lần đầu."
+  },
+  {
+    "chunk_id": "train-20-chunk-1",
+    "doc_id": "train-20",
+    "title": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn",
+    "addresses": [
+      "1D Đường 36, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn. Địa chỉ: 1D Đường 36, TP. Hồ Chí Minh. Chủ đề: an_toi. Trước khi bắt đầu hành trình khám phá Sài Gòn về đêm bạn có thể ghé Ẩm thực sân vườn Mái Lá để nạp đầy năng lượng. Giữa chốn Sài thành tấp nập, Mái Lá tựa như khu vườn thanh tĩnh để bạn tìm thấy phút giây an yên trong tâm hồn."
+  },
+  {
+    "chunk_id": "train-20-chunk-2",
+    "doc_id": "train-20",
+    "title": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn",
+    "addresses": [
+      "1D Đường 36, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn. Địa chỉ: 1D Đường 36, TP. Hồ Chí Minh. Chủ đề: an_toi. Giữa chốn Sài thành tấp nập, Mái Lá tựa như khu vườn thanh tĩnh để bạn tìm thấy phút giây an yên trong tâm hồn. Các món ăn ở đây mang đậm đặc trưng của ba miền, từ hải sản tươi sống cho đến món ăn đồng quê…"
+  },
+  {
+    "chunk_id": "train-20-chunk-3",
+    "doc_id": "train-20",
+    "title": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn",
+    "addresses": [
+      "1D Đường 36, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn. Địa chỉ: 1D Đường 36, TP. Hồ Chí Minh. Chủ đề: an_toi. Các món ăn ở đây mang đậm đặc trưng của ba miền, từ hải sản tươi sống cho đến món ăn đồng quê… tất cả đều được chế biến vô cùng hấp dẫn."
+  },
+  {
+    "chunk_id": "train-20-chunk-4",
+    "doc_id": "train-20",
+    "title": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn",
+    "addresses": [
+      "1D Đường 36, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn. Địa chỉ: 1D Đường 36, TP. Hồ Chí Minh. Chủ đề: an_toi. tất cả đều được chế biến vô cùng hấp dẫn. Nếu bạn chưa biết ăn tối Sài Gòn ở đâu, ăn gì thì ghé ngay để Mái Lá để trải nghiệm."
+  },
+  {
+    "chunk_id": "train-20-chunk-5",
+    "doc_id": "train-20",
+    "title": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn",
+    "addresses": [
+      "1D Đường 36, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 5,
+    "text": "Ẩm thực sân vườn Mái Lá – địa điểm ăn tối view đẹp Sài Gòn. Địa chỉ: 1D Đường 36, TP. Hồ Chí Minh. Chủ đề: an_toi. Nếu bạn chưa biết ăn tối Sài Gòn ở đâu, ăn gì thì ghé ngay để Mái Lá để trải nghiệm."
+  },
+  {
+    "chunk_id": "train-21-chunk-1",
+    "doc_id": "train-21",
+    "title": "Quán Gỗ – địa chỉ ăn tối Sài Gòn ngon nức lòng thực khách",
+    "addresses": [
+      "781/C10 Lê Hồng Phong, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Quán Gỗ – địa chỉ ăn tối Sài Gòn ngon nức lòng thực khách. Địa chỉ: 781/C10 Lê Hồng Phong, TP. Hồ Chí Minh. Chủ đề: an_toi. Quán Gỗ là nơi mang đến cho thực khách các món ăn mang đậm đặc trưng của Việt Nam với cách chế biến độc đáo. Tại đây thực khách có thể lựa chọn nướng, lẩu hoặc hấp tùy theo sở thích."
+  },
+  {
+    "chunk_id": "train-21-chunk-2",
+    "doc_id": "train-21",
+    "title": "Quán Gỗ – địa chỉ ăn tối Sài Gòn ngon nức lòng thực khách",
+    "addresses": [
+      "781/C10 Lê Hồng Phong, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Quán Gỗ – địa chỉ ăn tối Sài Gòn ngon nức lòng thực khách. Địa chỉ: 781/C10 Lê Hồng Phong, TP. Hồ Chí Minh. Chủ đề: an_toi. Tại đây thực khách có thể lựa chọn nướng, lẩu hoặc hấp tùy theo sở thích. Với nguyên liệu tươi ngon, mỗi món ăn đều mang đến trải nghiệm ẩm thực độc đáo."
+  },
+  {
+    "chunk_id": "train-21-chunk-3",
+    "doc_id": "train-21",
+    "title": "Quán Gỗ – địa chỉ ăn tối Sài Gòn ngon nức lòng thực khách",
+    "addresses": [
+      "781/C10 Lê Hồng Phong, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Quán Gỗ – địa chỉ ăn tối Sài Gòn ngon nức lòng thực khách. Địa chỉ: 781/C10 Lê Hồng Phong, TP. Hồ Chí Minh. Chủ đề: an_toi. Với nguyên liệu tươi ngon, mỗi món ăn đều mang đến trải nghiệm ẩm thực độc đáo. Ngoài ra, quán còn được đánh giá cao nhờ không gian rộng rãi, thông thoáng, nhân viên phục vụ siêu nhiệt tình."
+  },
+  {
+    "chunk_id": "train-21-chunk-4",
+    "doc_id": "train-21",
+    "title": "Quán Gỗ – địa chỉ ăn tối Sài Gòn ngon nức lòng thực khách",
+    "addresses": [
+      "781/C10 Lê Hồng Phong, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Quán Gỗ – địa chỉ ăn tối Sài Gòn ngon nức lòng thực khách. Địa chỉ: 781/C10 Lê Hồng Phong, TP. Hồ Chí Minh. Chủ đề: an_toi. Ngoài ra, quán còn được đánh giá cao nhờ không gian rộng rãi, thông thoáng, nhân viên phục vụ siêu nhiệt tình."
+  },
+  {
+    "chunk_id": "train-22-chunk-1",
+    "doc_id": "train-22",
+    "title": "Phố đi bộ Bùi Viện – phố ăn uống Sài Gòn nổi tiếng",
+    "addresses": [
+      "Đường Bùi Viện, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Phố đi bộ Bùi Viện – phố ăn uống Sài Gòn nổi tiếng. Địa chỉ: Đường Bùi Viện, TP. Hồ Chí Minh. Chủ đề: an_toi. Phố Tây Bùi Viện được xem là thiên đường vui chơi, ăn tối Sài Gòn nổi tiếng mà bất cứ ai có dịp đến Sài thành cũng muốn một lần được đặt chân đến. Khu phố sầm suất này hội tụ đủ từ những nhà hàng sang trọng cho đến những quán bình dân hay gánh hàng rong với nhiều món ăn hấp dẫn."
+  },
+  {
+    "chunk_id": "train-22-chunk-2",
+    "doc_id": "train-22",
+    "title": "Phố đi bộ Bùi Viện – phố ăn uống Sài Gòn nổi tiếng",
+    "addresses": [
+      "Đường Bùi Viện, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Phố đi bộ Bùi Viện – phố ăn uống Sài Gòn nổi tiếng. Địa chỉ: Đường Bùi Viện, TP. Hồ Chí Minh. Chủ đề: an_toi. Khu phố sầm suất này hội tụ đủ từ những nhà hàng sang trọng cho đến những quán bình dân hay gánh hàng rong với nhiều món ăn hấp dẫn. Đặc biệt, nếu ghé đến đây, bạn đừng bỏ qua quán ốc nằm ở cuối đường Bùi Viện với nhiều loại ốc tươi ngon cùng các loại hải sản như cua, tôm, ngao…"
+  },
+  {
+    "chunk_id": "train-22-chunk-3",
+    "doc_id": "train-22",
+    "title": "Phố đi bộ Bùi Viện – phố ăn uống Sài Gòn nổi tiếng",
+    "addresses": [
+      "Đường Bùi Viện, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Phố đi bộ Bùi Viện – phố ăn uống Sài Gòn nổi tiếng. Địa chỉ: Đường Bùi Viện, TP. Hồ Chí Minh. Chủ đề: an_toi. Đặc biệt, nếu ghé đến đây, bạn đừng bỏ qua quán ốc nằm ở cuối đường Bùi Viện với nhiều loại ốc tươi ngon cùng các loại hải sản như cua, tôm, ngao…"
+  },
+  {
+    "chunk_id": "train-23-chunk-1",
+    "doc_id": "train-23",
+    "title": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền",
+    "addresses": [
+      "111 Lê Văn Thọ, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền. Địa chỉ: 111 Lê Văn Thọ, TP. Hồ Chí Minh. Chủ đề: an_toi. Bún bò chả ghẹ 7 Ghiền là quán bún bò Huế ngon ở Sài Gòn được lòng nhiều tín đồ ẩm thực. Ở đây có món chả ghẹ độc quyền, vị rất béo, ăn thơm mà khó tìm thấy ở các quán khác."
+  },
+  {
+    "chunk_id": "train-23-chunk-2",
+    "doc_id": "train-23",
+    "title": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền",
+    "addresses": [
+      "111 Lê Văn Thọ, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền. Địa chỉ: 111 Lê Văn Thọ, TP. Hồ Chí Minh. Chủ đề: an_toi. Ở đây có món chả ghẹ độc quyền, vị rất béo, ăn thơm mà khó tìm thấy ở các quán khác. Nước lèo của quán vừa ăn, nêm nếm gia vị đậm đà, có vị ngọt thanh thanh."
+  },
+  {
+    "chunk_id": "train-23-chunk-3",
+    "doc_id": "train-23",
+    "title": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền",
+    "addresses": [
+      "111 Lê Văn Thọ, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền. Địa chỉ: 111 Lê Văn Thọ, TP. Hồ Chí Minh. Chủ đề: an_toi. Nước lèo của quán vừa ăn, nêm nếm gia vị đậm đà, có vị ngọt thanh thanh. Sợi bún to, dai dai, topping ăn kèm có huyết, thịt bò, chả lụa, chả ghẹ…"
+  },
+  {
+    "chunk_id": "train-23-chunk-4",
+    "doc_id": "train-23",
+    "title": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền",
+    "addresses": [
+      "111 Lê Văn Thọ, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 4,
+    "text": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền. Địa chỉ: 111 Lê Văn Thọ, TP. Hồ Chí Minh. Chủ đề: an_toi. Sợi bún to, dai dai, topping ăn kèm có huyết, thịt bò, chả lụa, chả ghẹ… vô cùng hấp dẫn."
+  },
+  {
+    "chunk_id": "train-23-chunk-5",
+    "doc_id": "train-23",
+    "title": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền",
+    "addresses": [
+      "111 Lê Văn Thọ, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 5,
+    "text": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền. Địa chỉ: 111 Lê Văn Thọ, TP. Hồ Chí Minh. Chủ đề: an_toi. vô cùng hấp dẫn. Nếu bạn đang tìm địa chỉ ăn tối Sài Gòn ngon thì bún bò chả ghẹ 7 Ghiền là sự lựa chọn lý tưởng."
+  },
+  {
+    "chunk_id": "train-23-chunk-6",
+    "doc_id": "train-23",
+    "title": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền",
+    "addresses": [
+      "111 Lê Văn Thọ, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 6,
+    "text": "Sài Gòn ăn tối gì ngon? Bún bò chả ghẹ 7 Ghiền. Địa chỉ: 111 Lê Văn Thọ, TP. Hồ Chí Minh. Chủ đề: an_toi. Nếu bạn đang tìm địa chỉ ăn tối Sài Gòn ngon thì bún bò chả ghẹ 7 Ghiền là sự lựa chọn lý tưởng."
+  },
+  {
+    "chunk_id": "train-24-chunk-1",
+    "doc_id": "train-24",
+    "title": "Cơm tấm Ba Ghiền – món ăn tối ngon ở Sài Gòn",
+    "addresses": [
+      "84 Đặng Văn Ngữ, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 1,
+    "text": "Cơm tấm Ba Ghiền – món ăn tối ngon ở Sài Gòn. Địa chỉ: 84 Đặng Văn Ngữ, TP. Hồ Chí Minh. Chủ đề: an_toi. Cơm tấm Ba Ghiền là địa chỉ thưởng thức cơm tấm Sài Gòn ngon trứ danh với phần ăn chất lượng, hương vị hấp dẫn. Dĩa cơm đầy đặn với miếng sườn to bự chảng, ngoài ra còn có nhiều topping khác như: chả trứng, ốp la, bì, lạp xưởng, xíu mại, gà, đậu hũ nhồi thịt…"
+  },
+  {
+    "chunk_id": "train-24-chunk-2",
+    "doc_id": "train-24",
+    "title": "Cơm tấm Ba Ghiền – món ăn tối ngon ở Sài Gòn",
+    "addresses": [
+      "84 Đặng Văn Ngữ, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 2,
+    "text": "Cơm tấm Ba Ghiền – món ăn tối ngon ở Sài Gòn. Địa chỉ: 84 Đặng Văn Ngữ, TP. Hồ Chí Minh. Chủ đề: an_toi. Dĩa cơm đầy đặn với miếng sườn to bự chảng, ngoài ra còn có nhiều topping khác như: chả trứng, ốp la, bì, lạp xưởng, xíu mại, gà, đậu hũ nhồi thịt… Đây chắc chắn là địa chỉ ăn tối Sài Gòn khiến bạn no cứng bụng."
+  },
+  {
+    "chunk_id": "train-24-chunk-3",
+    "doc_id": "train-24",
+    "title": "Cơm tấm Ba Ghiền – món ăn tối ngon ở Sài Gòn",
+    "addresses": [
+      "84 Đặng Văn Ngữ, TP. Hồ Chí Minh"
+    ],
+    "category": "an_toi",
+    "order": 3,
+    "text": "Cơm tấm Ba Ghiền – món ăn tối ngon ở Sài Gòn. Địa chỉ: 84 Đặng Văn Ngữ, TP. Hồ Chí Minh. Chủ đề: an_toi. Đây chắc chắn là địa chỉ ăn tối Sài Gòn khiến bạn no cứng bụng."
+  },
+  {
+    "chunk_id": "train-25-chunk-1",
+    "doc_id": "train-25",
+    "title": "Gà nướng Anh Tư",
+    "addresses": [
+      "449 Lê Quang Định, TP. Hồ Chí Minh"
+    ],
+    "category": "lau_nuong",
+    "order": 1,
+    "text": "Gà nướng Anh Tư. Địa chỉ: 449 Lê Quang Định, TP. Hồ Chí Minh. Chủ đề: lau_nuong. Là quán ăn gia truyền, Gà nướng Anh Tư luôn giữ được hương vị riêng trong suốt thời gian làm nghề. Đến quán, bạn nhất định không được bỏ qua món best seller ở đây là gà nướng muối ớt."
+  },
+  {
+    "chunk_id": "train-25-chunk-2",
+    "doc_id": "train-25",
+    "title": "Gà nướng Anh Tư",
+    "addresses": [
+      "449 Lê Quang Định, TP. Hồ Chí Minh"
+    ],
+    "category": "lau_nuong",
+    "order": 2,
+    "text": "Gà nướng Anh Tư. Địa chỉ: 449 Lê Quang Định, TP. Hồ Chí Minh. Chủ đề: lau_nuong. Đến quán, bạn nhất định không được bỏ qua món best seller ở đây là gà nướng muối ớt. Với lớp bột ớt phù kín thân gà cho ra thành phẩm vô cùng đẹp mắt."
+  },
+  {
+    "chunk_id": "train-25-chunk-3",
+    "doc_id": "train-25",
+    "title": "Gà nướng Anh Tư",
+    "addresses": [
+      "449 Lê Quang Định, TP. Hồ Chí Minh"
+    ],
+    "category": "lau_nuong",
+    "order": 3,
+    "text": "Gà nướng Anh Tư. Địa chỉ: 449 Lê Quang Định, TP. Hồ Chí Minh. Chủ đề: lau_nuong. Với lớp bột ớt phù kín thân gà cho ra thành phẩm vô cùng đẹp mắt. Gà có vị đậm đà, thơm mùi muối ớt nhưng không hề cay nồng, thịt gà có độ dai mềm nhất định."
+  },
+  {
+    "chunk_id": "train-25-chunk-4",
+    "doc_id": "train-25",
+    "title": "Gà nướng Anh Tư",
+    "addresses": [
+      "449 Lê Quang Định, TP. Hồ Chí Minh"
+    ],
+    "category": "lau_nuong",
+    "order": 4,
+    "text": "Gà nướng Anh Tư. Địa chỉ: 449 Lê Quang Định, TP. Hồ Chí Minh. Chủ đề: lau_nuong. Gà có vị đậm đà, thơm mùi muối ớt nhưng không hề cay nồng, thịt gà có độ dai mềm nhất định. Ngoài ra, bạn cũng có thể thay đổi khẩu vị với gà luộc chấm muối tiêu, mẹt gà, gà quay…"
+  },
+  {
+    "chunk_id": "train-25-chunk-5",
+    "doc_id": "train-25",
+    "title": "Gà nướng Anh Tư",
+    "addresses": [
+      "449 Lê Quang Định, TP. Hồ Chí Minh"
+    ],
+    "category": "lau_nuong",
+    "order": 5,
+    "text": "Gà nướng Anh Tư. Địa chỉ: 449 Lê Quang Định, TP. Hồ Chí Minh. Chủ đề: lau_nuong. Ngoài ra, bạn cũng có thể thay đổi khẩu vị với gà luộc chấm muối tiêu, mẹt gà, gà quay…"
+  }
+]
