@@ -1,4 +1,4 @@
-/skills 
-/Plan
-/.venv
-/__pycache__
+skills/
+Plan/
+.venv/
+__pycache__/
