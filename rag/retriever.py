@@ -48,6 +48,41 @@ class TfidfRetriever:
 
         return results
 
+    def search_filtered(
+        self,
+        query: str,
+        top_k: int = 4,
+        category_filters: list[str] | None = None,
+        location_terms: list[str] | None = None,
+    ) -> list[RetrievalResult]:
+        base_results = self.search(query, top_k=max(top_k * 3, top_k))
+        filtered: list[RetrievalResult] = []
+
+        for item in base_results:
+            document = item.chunk.document
+            if category_filters and document.category not in category_filters:
+                continue
+
+            if location_terms:
+                haystack = normalize_text(
+                    " ".join([document.title, document.content, " ".join(document.addresses)])
+                )
+                if not any(term in haystack for term in location_terms):
+                    continue
+
+            filtered.append(item)
+            if len(filtered) >= top_k:
+                break
+
+        return filtered or base_results[:top_k]
+
+    def lexical_overlap_score(self, query: str, text: str) -> float:
+        query_terms = set(normalize_terms(query))
+        text_terms = set(normalize_terms(text))
+        if not query_terms or not text_terms:
+            return 0.0
+        return len(query_terms & text_terms) / max(len(query_terms), 1)
+
     def save(self, output_dir: str | Path) -> None:
         output_path = Path(output_dir)
         output_path.mkdir(parents=True, exist_ok=True)

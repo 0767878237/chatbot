@@ -1,29 +1,36 @@
 # Sai Gon Food Chatbot
 
-Chatbot nay duoc build bang Python + Streamlit de mo phong giao dien chat kieu Messenger va giup ban hoc flow RAG co ban. Phien ban hien tai dung `TF-IDF + cosine similarity` de retrieval o muc `chunk-level` va `template answer` de sinh cau tra loi, nen chay tot tren may CPU khong can GPU.
+Do an nay duoc build bang Python + Streamlit de mo phong lo trinh nang cap tu local RAG len agentic RAG theo huong mien phi. Ban hien tai van chay tot tren may CPU, khong can GPU va co 2 che do de demo truc tiep:
+
+- `Baseline RAG`: TF-IDF + chunk retrieval + template answer
+- `Agentic RAG`: query analysis + multi-query retrieval + filter + rerank + trace tung buoc
 
 ## Tinh nang
 
 - Doc du lieu tu `data/*.txt`
-- Tach moi muc thanh document co tieu de, dia chi, noi dung, nhom chu de
-- Cat document thanh nhieu chunk nho co overlap nhe de retrieval sat RAG hon
-- Tao chi muc retrieval cuc bo bang TF-IDF tren tung chunk
-- Hien thi cau tra loi, nguon tham khao va debug flow RAG
-- Giao dien Streamlit chat don gian, de doc va de sua
+- Tach document, chunk va gan category tu dong
+- Retrieve o muc chunk-level bang `TF-IDF + cosine similarity`
+- Phan tich truy van de tim category, mon an, vibe, dia diem
+- Chay vong lap agent nhe de thu nhieu bien the truy van
+- Hien thi nguon tham khao, prompt preview va trace tung buoc cua agent
+- Deploy truc tiep len Streamlit Community Cloud ma khong can API tra phi
 
 ## Cau truc
 
 ```text
 app.py
 rag/
-  ingest.py
-  retriever.py
+  agent.py
   chatbot.py
+  ingest.py
   pipeline.py
+  query_router.py
+  retriever.py
   types.py
 scripts/
   build_index.py
 data/
+artifacts/
 ```
 
 ## Cai dat
@@ -34,7 +41,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-## Chay app
+## Chay app local
 
 ```bash
 streamlit run app.py
@@ -46,9 +53,34 @@ streamlit run app.py
 python scripts/build_index.py
 ```
 
-## Cach hoc flow
+## Cach demo trong bao cao
 
-1. Dat cau hoi trong giao dien chat.
-2. Mo muc `Xem flow RAG`.
-3. Quan sat cac chunk duoc retrieve, diem lien quan va prompt preview.
-4. Sua du lieu trong `data/train.txt` va build lai de thay doi hanh vi chatbot.
+1. Mo app va de che do `Agentic RAG`.
+2. Dat cau hoi nhu `Quan nao lang man cho buoi toi o TP.HCM?`
+3. Mo muc `Xem flow RAG / agent trace`.
+4. Giai thich 3 diem:
+   - Agent phan tich truy van
+   - Agent retrieve nhieu bien the thay vi 1 lan
+   - Agent rerank ket qua truoc khi tra loi
+5. Chuyen sang `Baseline RAG` de so sanh.
+
+## Deploy len Streamlit Community Cloud
+
+1. Day source code len GitHub.
+2. Dang nhap Streamlit Community Cloud.
+3. Chon `New app`.
+4. Tro toi repo va file `app.py`.
+5. Deploy truc tiep voi `requirements.txt` hien tai.
+
+Neu sua du lieu trong `data/train.txt`, hay build lai index truoc khi commit:
+
+```bash
+python scripts/build_index.py
+```
+
+## Huong nang cap tiep theo
+
+- Them dense embedding de thanh hybrid RAG thuc su
+- Them local LLM qua Ollama cho answer generation
+- Them bo eval va benchmark giua baseline va agentic
+- Mo rong ingest cho PDF, CSV, FAQ, web data
