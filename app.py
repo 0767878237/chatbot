@@ -26,13 +26,15 @@ def bootstrap_state() -> None:
                 "role": "assistant",
                 "content": (
                     "Xin chao, minh la chatbot am thuc TP.HCM.\n\n"
-                    "Ban co the hoi ve mon an, quan an, dia diem lang man hoac so sanh giua che do Baseline RAG va Agentic RAG."
+                    "Ban co the hoi ve mon an, quan an, dia diem lang man, hoac cac khu vuc ngoai bo du lieu bang Adaptive RAG."
                 ),
                 "sources": [],
                 "debug": None,
                 "mode": "agentic",
             }
         ]
+    if "pending_prompt" not in st.session_state:
+        st.session_state.pending_prompt = None
 
 
 def render_styles() -> None:
@@ -96,33 +98,15 @@ def render_styles() -> None:
     )
 
 
-def render_sources(sources: list) -> None:
-    if not sources:
-        return
-
-    st.markdown("**Nguon tham khao**")
-    for item in sources:
-        document = item.chunk.document
-        addresses = "; ".join(document.addresses) if document.addresses else "Khong co dia chi"
-        st.markdown(
-            (
-                "<div class='source-card'>"
-                f"<strong>{document.title}</strong><br>"
-                f"Chunk: {item.chunk.chunk_id}<br>"
-                f"Dia chi: {addresses}<br>"
-                f"Diem lien quan: {item.score:.3f}<br><br>"
-                f"{item.chunk.text}"
-                "</div>"
-            ),
-            unsafe_allow_html=True,
-        )
-
-
 def render_debug(debug_data: dict | None) -> None:
     if not debug_data:
         return
 
     with st.expander("Xem flow RAG / agent trace", expanded=False):
+        route = debug_data.get("route")
+        if route:
+            st.markdown("**Adaptive route**")
+            st.json(route)
         strategy = debug_data.get("retrieval_strategy")
         if strategy:
             st.markdown(f"**Retrieval strategy:** `{strategy}`")
@@ -133,6 +117,28 @@ def render_debug(debug_data: dict | None) -> None:
         if generation_debug:
             st.markdown("**Generation debug**")
             st.json(generation_debug)
+        search_mode = debug_data.get("search_mode")
+        if search_mode:
+            st.markdown(f"**Search mode:** `{search_mode}`")
+        scope_check = debug_data.get("scope_check")
+        if scope_check:
+            st.markdown("**Scope check**")
+            st.json(scope_check)
+        web_results = debug_data.get("web_results")
+        if web_results:
+            st.markdown("**Web retrieval debug**")
+            st.json(web_results)
+        web_error = debug_data.get("web_error")
+        if web_error:
+            st.markdown(f"**Web error:** `{web_error}`")
+        memory_debug = debug_data.get("memory_debug")
+        if memory_debug:
+            st.markdown("**Memory debug**")
+            st.json(memory_debug)
+        memory_snapshot = debug_data.get("memory_snapshot")
+        if memory_snapshot:
+            st.markdown("**Memory snapshot**")
+            st.json(memory_snapshot)
 
         query_analysis = debug_data.get("query_analysis")
         if query_analysis:
@@ -178,30 +184,16 @@ def render_debug(debug_data: dict | None) -> None:
 def sidebar_controls() -> dict[str, object]:
     with st.sidebar:
         st.markdown("## Che do demo")
-        mode = st.radio(
-            "Chon che do chat",
-            options=["agentic", "baseline"],
-            format_func=lambda value: "Agentic RAG" if value == "agentic" else "Baseline RAG",
-            index=0,
-        )
-        retrieval_strategy = st.selectbox(
-            "Chien luoc retrieval",
-            options=["hybrid", "lexical", "semantic"],
-            index=0,
-            help="Hybrid la mac dinh de deploy mien phi: ket hop TF-IDF va latent semantic scoring tu scikit-learn.",
-        )
-        generation_mode = st.selectbox(
-            "Che do generation",
-            options=["template", "ollama"],
-            index=0,
-            help="Template dung cho deploy cloud. Ollama dung khi demo local va may dang chay model local.",
-        )
-        top_k = st.slider("So chunk retrieve", min_value=2, max_value=6, value=4)
+        mode = "agentic"
+        retrieval_strategy = "hybrid"
+        generation_mode = "template"
+        search_mode = "adaptive"
+        top_k = 5
         st.markdown(
             """
             <div class='metric-card'>
-                <strong>Deploy note</strong><br>
-                Khi deploy Streamlit Cloud hay de `generation = template`. Khi demo local, ban co the bat `ollama`.
+                <strong>Cau hinh co dinh</strong><br>
+                Retrieval: `hybrid` | Search: `adaptive` | Generation: `template` | Top K: `5`
             </div>
             """,
             unsafe_allow_html=True,
@@ -209,8 +201,8 @@ def sidebar_controls() -> dict[str, object]:
         st.markdown(
             """
             <div class='metric-card'>
-                <strong>Gia tri do an</strong><br>
-                Agentic RAG hien phan tich truy van, nhieu lan retrieve, loc va rerank thay vi chi tim 1 lan.
+                <strong>Muc tieu</strong><br>
+                Khoa cau hinh de chatbot on dinh hon, giam tra loi lech do thay doi qua nhieu tuy chon.
             </div>
             """,
             unsafe_allow_html=True,
@@ -220,6 +212,7 @@ def sidebar_controls() -> dict[str, object]:
         "top_k": top_k,
         "retrieval_strategy": retrieval_strategy,
         "generation_mode": generation_mode,
+        "search_mode": search_mode,
     }
 
 
@@ -229,11 +222,33 @@ def main() -> None:
     chatbot = get_chatbot()
     controls = sidebar_controls()
 
+    if st.session_state.pending_prompt:
+        prompt = st.session_state.pending_prompt
+        response = chatbot.answer(
+            prompt,
+            top_k=int(controls["top_k"]),
+            mode=str(controls["mode"]),
+            retrieval_strategy=str(controls["retrieval_strategy"]),
+            generation_mode=str(controls["generation_mode"]),
+            conversation_messages=st.session_state.messages,
+            search_mode=str(controls["search_mode"]),
+        )
+        assistant_message = {
+            "role": "assistant",
+            "content": response["answer"],
+            "sources": response["sources"],
+            "debug": response["debug"],
+            "mode": controls["mode"],
+        }
+        st.session_state.messages.append(assistant_message)
+        st.session_state.pending_prompt = None
+        st.rerun()
+
     st.markdown(
         """
         <div class="title-wrap">
             <h1>Sai Gon Food Chatbot</h1>
-            <p>Ban demo do an voi hai che do: Baseline RAG de lam moc so sanh va Agentic RAG de the hien truy van nhieu buoc.</p>
+            <p>Adaptive RAG duoc co dinh cau hinh de uu tien tinh on dinh khi demo va bao cao.</p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -246,15 +261,16 @@ def main() -> None:
             for message in st.session_state.messages:
                 with st.chat_message(message["role"]):
                     st.markdown(message["content"])
-                    render_sources(message.get("sources", []))
                     render_debug(message.get("debug"))
             st.markdown("</div>", unsafe_allow_html=True)
 
     with right_col:
         st.markdown("### Cach demo")
         st.markdown(
+            "- Chatbot dang dung cau hinh co dinh `hybrid + adaptive + top_k=5`.\n"
             "- Thu hoi ve mon an, kieu quan, dia diem hoac khong gian.\n"
-            "- Chuyen qua lai giua `Baseline RAG` va `Agentic RAG`.\n"
+            "- Hoi tiep theo kieu `con quan nao khac?`, `Binh Thanh thi sao?`, `so sanh 2 quan nay`.\n"
+            "- Cac cau chao hoi va cau ngoai nghiep vu se duoc chan truoc khi retrieve.\n"
             "- Mo `Xem flow RAG / agent trace` de giai thich tai sao chatbot tra loi nhu vay."
         )
         st.markdown("### Cau hoi goi y")
@@ -262,7 +278,10 @@ def main() -> None:
             "- Quan nao lang man cho buoi toi o TP.HCM?\n"
             "- Toi muon an vat lot bung o khuya thi nen di dau?\n"
             "- Goi y quan nuong cho gia dinh.\n"
-            "- Tim quan co mon chao o TP.HCM."
+            "- Tim quan co mon chao o TP.HCM.\n"
+            "- Con quan nao khac?\n"
+            "- Binh Thanh thi sao?\n"
+            "- Quan bun bo o Ha Noi thi sao?"
         )
 
     prompt = st.chat_input("Thu hoi ve mon an, quan an, dia diem o TP.HCM...")
@@ -270,28 +289,8 @@ def main() -> None:
         st.session_state.messages.append(
             {"role": "user", "content": prompt, "sources": [], "debug": None}
         )
-        with st.chat_message("user"):
-            st.markdown(prompt)
-
-        response = chatbot.answer(
-            prompt,
-            top_k=int(controls["top_k"]),
-            mode=str(controls["mode"]),
-            retrieval_strategy=str(controls["retrieval_strategy"]),
-            generation_mode=str(controls["generation_mode"]),
-        )
-        assistant_message = {
-            "role": "assistant",
-            "content": response["answer"],
-            "sources": response["sources"],
-            "debug": response["debug"],
-            "mode": controls["mode"],
-        }
-        st.session_state.messages.append(assistant_message)
-        with st.chat_message("assistant"):
-            st.markdown(response["answer"])
-            render_sources(response["sources"])
-            render_debug(response["debug"])
+        st.session_state.pending_prompt = prompt
+        st.rerun()
 
 
 if __name__ == "__main__":
