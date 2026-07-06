@@ -31,8 +31,9 @@ class TemplateAnswerGenerator(AnswerGenerator):
     ) -> tuple[str, dict]:
         top_chunk = results[0].chunk
         top_document = top_chunk.document
+        opening = self._build_opening(question, top_document.title)
         recommendation_lines = [
-            f"Neu ban dang hoi ve '{question.strip()}', minh goi y ban bat dau voi {top_document.title}.",
+            opening,
         ]
 
         if top_document.addresses:
@@ -70,6 +71,12 @@ class TemplateAnswerGenerator(AnswerGenerator):
             "generator": "template",
             "fallback_used": False,
         }
+
+    def _build_opening(self, question: str, title: str) -> str:
+        lowered = question.strip().lower()
+        if any(greeting in lowered for greeting in ["quan nao", "goi y", "nen an", "o dau"]):
+            return f"Minh goi y ban tham khao {title}."
+        return f"Du tren du lieu tim duoc, {title} la ket qua phu hop nhat."
 
 
 class OllamaAnswerGenerator(AnswerGenerator):

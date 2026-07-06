@@ -55,6 +55,28 @@ LOCATION_PATTERNS = [
     r"bui vien",
 ]
 
+GREETING_PATTERNS = [
+    "xin chao",
+    "chao ban",
+    "chao",
+    "hello",
+    "hi",
+    "hey",
+]
+
+FOOD_DOMAIN_HINTS = [
+    "quan",
+    "nha hang",
+    "mon",
+    "an",
+    "uong",
+    "am thuc",
+    "goi y",
+    "o dau",
+    "dia chi",
+    "quan nao",
+]
+
 
 def normalize_text(text: str) -> str:
     lowered = text.lower()
@@ -69,8 +91,6 @@ def analyze_query(question: str) -> QueryAnalysis:
         for category, synonyms in CATEGORY_SYNONYMS.items()
         if any(term in normalized_query for term in synonyms)
     ]
-    if not categories:
-        categories = ["tong_hop"]
 
     cuisine_terms = [term for term in CUISINE_KEYWORDS if term in normalized_query]
     vibe_terms = [term for term in VIBE_KEYWORDS if term in normalized_query]
@@ -110,8 +130,6 @@ def infer_intents(normalized_query: str) -> list[str]:
         intents.append("compare")
     if any(token in normalized_query for token in ["gan", "khu vuc", "dia chi", "duong"]):
         intents.append("locate")
-    if not intents:
-        intents.append("recommend")
     return intents
 
 
@@ -144,3 +162,18 @@ def build_query_variants(
         if item and item not in deduped:
             deduped.append(item)
     return deduped
+
+
+def is_greeting_query(normalized_query: str) -> bool:
+    return any(
+        normalized_query == pattern or normalized_query.startswith(pattern + " ")
+        for pattern in GREETING_PATTERNS
+    )
+
+
+def is_food_domain_query(analysis: QueryAnalysis) -> bool:
+    if analysis.cuisine_terms or analysis.vibe_terms or analysis.location_terms:
+        return True
+    if analysis.categories or analysis.intents:
+        return True
+    return any(hint in analysis.normalized_query for hint in FOOD_DOMAIN_HINTS)

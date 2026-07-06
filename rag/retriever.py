@@ -16,6 +16,7 @@ class TfidfRetriever:
     def __init__(self, chunks: list[Chunk], semantic_weight: float = 0.35):
         self.chunks = chunks
         self.semantic_weight = semantic_weight
+        self.supported_locations: set[str] = set()
         self.vectorizer = TfidfVectorizer(
             lowercase=True,
             ngram_range=(1, 2),

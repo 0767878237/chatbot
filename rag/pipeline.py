@@ -4,6 +4,7 @@ from pathlib import Path
 
 from rag.ingest import chunk_documents, load_documents, serialize_chunks, serialize_documents
 from rag.retriever import TfidfRetriever
+from rag.scope_guard import build_supported_location_terms
 
 
 def build_retriever(data_dir: str = "data", artifacts_dir: str = "artifacts") -> TfidfRetriever:
@@ -14,5 +15,15 @@ def build_retriever(data_dir: str = "data", artifacts_dir: str = "artifacts") ->
     serialize_documents(documents, artifacts_path / "documents.normalized.json")
     serialize_chunks(chunks, artifacts_path / "chunks.normalized.json")
     retriever = TfidfRetriever(chunks)
+    retriever.supported_locations = build_supported_location_terms(
+        [
+            {
+                "title": document.title,
+                "content": document.content,
+                "addresses": document.addresses,
+            }
+            for document in documents
+        ]
+    )
     retriever.save(artifacts_path)
     return retriever
