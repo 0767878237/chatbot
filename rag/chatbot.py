@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from rag.agent import RetrievalAgent
+from rag.generator import OllamaAnswerGenerator, TemplateAnswerGenerator
 from rag.retriever import TfidfRetriever
 from rag.types import AgentStep, QueryAnalysis, RetrievalResult
 
@@ -9,15 +10,24 @@ class FoodChatbot:
     def __init__(self, retriever: TfidfRetriever):
         self.retriever = retriever
         self.agent = RetrievalAgent(retriever)
+        self.template_generator = TemplateAnswerGenerator()
+        self.ollama_generator = OllamaAnswerGenerator()
 
-    def answer(self, question: str, top_k: int = 4, mode: str = "baseline") -> dict:
+    def answer(
+        self,
+        question: str,
+        top_k: int = 4,
+        mode: str = "baseline",
+        retrieval_strategy: str = "hybrid",
+        generation_mode: str = "template",
+    ) -> dict:
         if mode == "agentic":
-            agent_run = self.agent.run(question, top_k=top_k)
+            agent_run = self.agent.run(question, top_k=top_k, strategy=retrieval_strategy)
             results = agent_run.results
             analysis = agent_run.analysis
             agent_steps = agent_run.steps
         else:
-            results = self.retriever.search(question, top_k=top_k)
+            results = self.retriever.search(question, top_k=top_k, strategy=retrieval_strategy)
             analysis = None
             agent_steps = []
 
@@ -33,10 +43,21 @@ class FoodChatbot:
                     "prompt_preview": self.build_prompt(question, [], analysis=analysis, mode=mode),
                     "agent_steps": self.serialize_agent_steps(agent_steps),
                     "query_analysis": self.serialize_query_analysis(analysis),
+                    "retrieval_strategy": retrieval_strategy,
+                    "generation_mode": generation_mode,
                 },
             }
 
-        answer = self.build_answer(question, results, mode=mode, analysis=analysis)
+        prompt_preview = self.build_prompt(question, results, analysis=analysis, mode=mode)
+        answer, generation_debug = self.generate_answer(
+            question=question,
+            results=results,
+            mode=mode,
+            analysis=analysis,
+            prompt_preview=prompt_preview,
+            generation_mode=generation_mode,
+        )
+
         return {
             "answer": answer,
             "sources": results,
@@ -47,67 +68,44 @@ class FoodChatbot:
                         "title": item.chunk.document.title,
                         "score": round(item.score, 4),
                         "matched_terms": item.matched_terms,
+                        "score_breakdown": item.score_breakdown,
                         "content": item.chunk.text,
                     }
                     for item in results
                 ],
-                "prompt_preview": self.build_prompt(question, results, analysis=analysis, mode=mode),
+                "prompt_preview": prompt_preview,
                 "agent_steps": self.serialize_agent_steps(agent_steps),
                 "query_analysis": self.serialize_query_analysis(analysis),
+                "retrieval_strategy": retrieval_strategy,
+                "generation_mode": generation_mode,
+                "generation_debug": generation_debug,
             },
         }
 
-    def build_answer(
+    def generate_answer(
         self,
         question: str,
         results: list[RetrievalResult],
-        mode: str = "baseline",
-        analysis: QueryAnalysis | None = None,
-    ) -> str:
-        top_chunk = results[0].chunk
-        top_document = top_chunk.document
-        recommendation_lines = [
-            f"Neu ban dang hoi ve '{question.strip()}', minh goi y ban bat dau voi {top_document.title}.",
-        ]
-
-        if top_document.addresses:
-            recommendation_lines.append(
-                "Dia chi noi bat: " + "; ".join(top_document.addresses) + "."
+        mode: str,
+        analysis: QueryAnalysis | None,
+        prompt_preview: str,
+        generation_mode: str,
+    ) -> tuple[str, dict]:
+        if generation_mode == "ollama":
+            return self.ollama_generator.generate(
+                question=question,
+                results=results,
+                mode=mode,
+                prompt=prompt_preview,
+                analysis=analysis,
             )
-
-        recommendation_lines.append(
-            "Doan ngu canh phu hop nhat:\n" + top_chunk.text
+        return self.template_generator.generate(
+            question=question,
+            results=results,
+            mode=mode,
+            prompt=prompt_preview,
+            analysis=analysis,
         )
-
-        companion_chunks = [
-            item.chunk for item in results[1:] if item.chunk.document.doc_id == top_document.doc_id
-        ]
-        if companion_chunks:
-            recommendation_lines.append(
-                "Thong tin bo sung cung quan:\n"
-                + "\n".join(f"- {chunk.text}" for chunk in companion_chunks[:2])
-            )
-
-        if len(results) > 1:
-            alternative_titles = ", ".join(
-                list(dict.fromkeys(item.chunk.document.title for item in results[1:]))
-            )
-            recommendation_lines.append(
-                f"Ban cung co the tham khao them: {alternative_titles}."
-            )
-
-        if mode == "agentic" and analysis is not None:
-            recommendation_lines.append(
-                "Agent da thu nhieu bien the truy van, loc theo y dinh va chon lai cac chunk phu hop nhat truoc khi tra loi."
-            )
-            recommendation_lines.append(
-                "Tom tat hieu truy van: " + self.describe_analysis(analysis) + "."
-            )
-        else:
-            recommendation_lines.append(
-                "Cau tra loi nay dang duoc tao theo dang template tu cac doan du lieu truy xuat duoc de ban de quan sat flow RAG."
-            )
-        return "\n\n".join(recommendation_lines)
 
     def build_prompt(
         self,
@@ -132,7 +130,7 @@ class FoodChatbot:
             f"Cau hoi: {question}\n"
             f"Phan tich truy van: {self.describe_analysis(analysis) if analysis else 'Khong co'}\n"
             f"Ngu canh:\n{context_block}\n"
-            "Neu thieu du lieu thi noi ro la chua co thong tin trong bo du lieu."
+            "Tra loi ngan gon, co neu duoc thi nen dua goi y chinh, dia chi va nhac ro khi du lieu chua du."
         )
 
     def describe_analysis(self, analysis: QueryAnalysis) -> str:

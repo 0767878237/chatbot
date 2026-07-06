@@ -18,7 +18,7 @@ class RetrievalAgent:
     def __init__(self, retriever: TfidfRetriever):
         self.retriever = retriever
 
-    def run(self, question: str, top_k: int = 4) -> AgentRun:
+    def run(self, question: str, top_k: int = 4, strategy: str = "hybrid") -> AgentRun:
         analysis = analyze_query(question)
         steps: list[AgentStep] = [
             AgentStep(
@@ -41,6 +41,7 @@ class RetrievalAgent:
                 top_k=top_k,
                 category_filters=analysis.categories,
                 location_terms=analysis.location_terms,
+                strategy=strategy,
             )
             steps.append(
                 AgentStep(
@@ -53,6 +54,7 @@ class RetrievalAgent:
                                 "chunk_id": item.chunk.chunk_id,
                                 "title": item.chunk.document.title,
                                 "score": round(item.score, 4),
+                                "score_breakdown": item.score_breakdown,
                             }
                             for item in variant_results
                         ],
@@ -80,6 +82,7 @@ class RetrievalAgent:
                             "title": item.chunk.document.title,
                             "score": round(item.score, 4),
                             "category": item.chunk.document.category,
+                            "score_breakdown": item.score_breakdown,
                         }
                         for item in reranked
                     ]

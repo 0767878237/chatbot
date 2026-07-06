@@ -123,6 +123,17 @@ def render_debug(debug_data: dict | None) -> None:
         return
 
     with st.expander("Xem flow RAG / agent trace", expanded=False):
+        strategy = debug_data.get("retrieval_strategy")
+        if strategy:
+            st.markdown(f"**Retrieval strategy:** `{strategy}`")
+        generation_mode = debug_data.get("generation_mode")
+        if generation_mode:
+            st.markdown(f"**Generation mode:** `{generation_mode}`")
+        generation_debug = debug_data.get("generation_debug")
+        if generation_debug:
+            st.markdown("**Generation debug**")
+            st.json(generation_debug)
+
         query_analysis = debug_data.get("query_analysis")
         if query_analysis:
             st.markdown("**Phan tich truy van**")
@@ -152,6 +163,7 @@ def render_debug(debug_data: dict | None) -> None:
                         "<div class='debug-card'>"
                         f"<strong>{chunk['title']}</strong><br>"
                         f"Score: {chunk['score']}<br>"
+                        f"Score breakdown: {chunk.get('score_breakdown', {})}<br>"
                         f"Tu khop: {', '.join(chunk['matched_terms']) or 'Khong co'}<br><br>"
                         f"{chunk['content']}"
                         "</div>"
@@ -172,12 +184,24 @@ def sidebar_controls() -> dict[str, object]:
             format_func=lambda value: "Agentic RAG" if value == "agentic" else "Baseline RAG",
             index=0,
         )
+        retrieval_strategy = st.selectbox(
+            "Chien luoc retrieval",
+            options=["hybrid", "lexical", "semantic"],
+            index=0,
+            help="Hybrid la mac dinh de deploy mien phi: ket hop TF-IDF va latent semantic scoring tu scikit-learn.",
+        )
+        generation_mode = st.selectbox(
+            "Che do generation",
+            options=["template", "ollama"],
+            index=0,
+            help="Template dung cho deploy cloud. Ollama dung khi demo local va may dang chay model local.",
+        )
         top_k = st.slider("So chunk retrieve", min_value=2, max_value=6, value=4)
         st.markdown(
             """
             <div class='metric-card'>
                 <strong>Deploy note</strong><br>
-                Ban nay khong can API tra phi, phu hop de deploy len Streamlit Community Cloud.
+                Khi deploy Streamlit Cloud hay de `generation = template`. Khi demo local, ban co the bat `ollama`.
             </div>
             """,
             unsafe_allow_html=True,
@@ -191,7 +215,12 @@ def sidebar_controls() -> dict[str, object]:
             """,
             unsafe_allow_html=True,
         )
-    return {"mode": mode, "top_k": top_k}
+    return {
+        "mode": mode,
+        "top_k": top_k,
+        "retrieval_strategy": retrieval_strategy,
+        "generation_mode": generation_mode,
+    }
 
 
 def main() -> None:
@@ -244,7 +273,13 @@ def main() -> None:
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        response = chatbot.answer(prompt, top_k=int(controls["top_k"]), mode=str(controls["mode"]))
+        response = chatbot.answer(
+            prompt,
+            top_k=int(controls["top_k"]),
+            mode=str(controls["mode"]),
+            retrieval_strategy=str(controls["retrieval_strategy"]),
+            generation_mode=str(controls["generation_mode"]),
+        )
         assistant_message = {
             "role": "assistant",
             "content": response["answer"],

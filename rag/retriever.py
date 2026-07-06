@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 
 import numpy as np
+from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -12,8 +13,9 @@ from rag.types import Chunk, RetrievalResult
 
 
 class TfidfRetriever:
-    def __init__(self, chunks: list[Chunk]):
+    def __init__(self, chunks: list[Chunk], semantic_weight: float = 0.35):
         self.chunks = chunks
+        self.semantic_weight = semantic_weight
         self.vectorizer = TfidfVectorizer(
             lowercase=True,
             ngram_range=(1, 2),
@@ -22,31 +24,16 @@ class TfidfRetriever:
         self.corpus = [chunk.text for chunk in chunks]
         self.matrix = self.vectorizer.fit_transform(self.corpus)
 
-    def search(self, query: str, top_k: int = 4) -> list[RetrievalResult]:
-        query_vector = self.vectorizer.transform([query])
-        scores = cosine_similarity(query_vector, self.matrix).flatten()
-        ranked_indices = np.argsort(scores)[::-1]
+        semantic_components = max(2, min(64, self.matrix.shape[0] - 1, self.matrix.shape[1] - 1))
+        if semantic_components >= 2:
+            self.svd = TruncatedSVD(n_components=semantic_components, random_state=42)
+            self.semantic_matrix = self.svd.fit_transform(self.matrix)
+        else:
+            self.svd = None
+            self.semantic_matrix = None
 
-        query_terms = normalize_terms(query)
-        results: list[RetrievalResult] = []
-
-        for index in ranked_indices[:top_k]:
-            score = float(scores[index])
-            if score <= 0:
-                continue
-            chunk = self.chunks[index]
-            matched_terms = [
-                term for term in query_terms if term in normalize_text(self.corpus[index])
-            ]
-            results.append(
-                RetrievalResult(
-                    chunk=chunk,
-                    score=score,
-                    matched_terms=matched_terms,
-                )
-            )
-
-        return results
+    def search(self, query: str, top_k: int = 4, strategy: str = "hybrid") -> list[RetrievalResult]:
+        return self._search_internal(query=query, top_k=top_k, strategy=strategy)
 
     def search_filtered(
         self,
@@ -54,8 +41,9 @@ class TfidfRetriever:
         top_k: int = 4,
         category_filters: list[str] | None = None,
         location_terms: list[str] | None = None,
+        strategy: str = "hybrid",
     ) -> list[RetrievalResult]:
-        base_results = self.search(query, top_k=max(top_k * 3, top_k))
+        base_results = self.search(query, top_k=max(top_k * 3, top_k), strategy=strategy)
         filtered: list[RetrievalResult] = []
 
         for item in base_results:
@@ -108,6 +96,59 @@ class TfidfRetriever:
             encoding="utf-8",
         )
 
+    def _search_internal(self, query: str, top_k: int, strategy: str) -> list[RetrievalResult]:
+        query_vector = self.vectorizer.transform([query])
+        lexical_scores = cosine_similarity(query_vector, self.matrix).flatten()
+        semantic_scores = self._semantic_scores(query_vector)
+        hybrid_scores = self._combine_scores(lexical_scores, semantic_scores, strategy)
+        ranked_indices = np.argsort(hybrid_scores)[::-1]
+
+        query_terms = normalize_terms(query)
+        results: list[RetrievalResult] = []
+
+        for index in ranked_indices[:top_k]:
+            score = float(hybrid_scores[index])
+            if score <= 0:
+                continue
+            chunk = self.chunks[index]
+            matched_terms = [
+                term for term in query_terms if term in normalize_text(self.corpus[index])
+            ]
+            results.append(
+                RetrievalResult(
+                    chunk=chunk,
+                    score=score,
+                    matched_terms=matched_terms,
+                    score_breakdown={
+                        "hybrid": round(float(hybrid_scores[index]), 4),
+                        "lexical": round(float(lexical_scores[index]), 4),
+                        "semantic": round(float(semantic_scores[index]), 4),
+                    },
+                )
+            )
+
+        return results
+
+    def _semantic_scores(self, query_vector) -> np.ndarray:
+        if self.svd is None or self.semantic_matrix is None:
+            return np.zeros(self.matrix.shape[0], dtype=float)
+        query_semantic = self.svd.transform(query_vector)
+        return cosine_similarity(query_semantic, self.semantic_matrix).flatten()
+
+    def _combine_scores(
+        self,
+        lexical_scores: np.ndarray,
+        semantic_scores: np.ndarray,
+        strategy: str,
+    ) -> np.ndarray:
+        if strategy == "lexical":
+            return lexical_scores
+        if strategy == "semantic":
+            return semantic_scores
+        return ((1 - self.semantic_weight) * lexical_scores) + (
+            self.semantic_weight * semantic_scores
+        )
+
 
 def normalize_text(text: str) -> str:
     text = text.lower()
@@ -116,4 +157,11 @@ def normalize_text(text: str) -> str:
 
 def normalize_terms(text: str) -> list[str]:
     normalized = normalize_text(text)
-    return [term for term in re.split(r"[^\wàáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ]+", normalized) if len(term) > 1]
+    return [
+        term
+        for term in re.split(
+            r"[^\wÃ Ã¡áº£Ã£áº¡Äƒáº¯áº±áº³áºµáº·Ã¢áº¥áº§áº©áº«áº­Ã¨Ã©áº»áº½áº¹Ãªáº¿á»á»ƒá»…á»‡Ã¬Ã­á»‰Ä©á»‹Ã²Ã³á»Ãµá»Ã´á»‘á»“á»•á»—á»™Æ¡á»›á»á»Ÿá»¡á»£Ã¹Ãºá»§Å©á»¥Æ°á»©á»«á»­á»¯á»±á»³Ã½á»·á»¹á»µÄ‘]+",
+            normalized,
+        )
+        if len(term) > 1
+    ]

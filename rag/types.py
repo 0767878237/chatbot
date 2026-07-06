@@ -25,6 +25,7 @@ class RetrievalResult:
     chunk: Chunk
     score: float
     matched_terms: list[str]
+    score_breakdown: dict[str, float] = field(default_factory=dict)
 
 
 @dataclass
