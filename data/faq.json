@@ -1,0 +1,14 @@
+[
+  {
+    "doc_id": "faq-1",
+    "question": "Quan nao phu hop cho bua toi lang man o bo song?",
+    "answer": "Ban co the uu tien cac dia diem co vibe lang man, bo song va view dep nhu The Deck Saigon hoac Hello Saigon trong bo du lieu.",
+    "category": "lang_man"
+  },
+  {
+    "doc_id": "faq-2",
+    "question": "Neu muon an toi voi gia dinh thi nen tim gi?",
+    "answer": "Hay uu tien cac quan thuoc nhom gia_dinh, khong gian am cung, mon an de chia se va co nhieu lua chon cho nhieu nguoi.",
+    "category": "gia_dinh"
+  }
+]
