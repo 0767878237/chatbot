@@ -16,6 +16,9 @@ SUPPORTED_HCMC_MARKERS = [
 UNSUPPORTED_LOCATION_MARKERS = [
     "ha noi",
     "da nang",
+    "son tra",
+    "hai chau",
+    "ngu hanh son",
     "can tho",
     "nha trang",
     "vung tau",
@@ -92,5 +95,8 @@ def extract_known_locations(normalized_text_value: str) -> set[str]:
         "xo viet nghe tinh",
         "bui vien",
         "nguyen hue",
+        "son tra",
+        "hai chau",
+        "ngu hanh son",
     }
     return {candidate for candidate in candidates if candidate in normalized_text_value}

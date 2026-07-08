@@ -9,6 +9,7 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from rag.query_router import normalize_text
 from rag.types import Chunk, RetrievalResult
 
 
@@ -151,18 +152,10 @@ class TfidfRetriever:
         )
 
 
-def normalize_text(text: str) -> str:
-    text = text.lower()
-    return re.sub(r"\s+", " ", text).strip()
-
-
 def normalize_terms(text: str) -> list[str]:
     normalized = normalize_text(text)
     return [
         term
-        for term in re.split(
-            r"[^\wÃ Ã¡áº£Ã£áº¡Äƒáº¯áº±áº³áºµáº·Ã¢áº¥áº§áº©áº«áº­Ã¨Ã©áº»áº½áº¹Ãªáº¿á»á»ƒá»…á»‡Ã¬Ã­á»‰Ä©á»‹Ã²Ã³á»Ãµá»Ã´á»‘á»“á»•á»—á»™Æ¡á»›á»á»Ÿá»¡á»£Ã¹Ãºá»§Å©á»¥Æ°á»©á»«á»­á»¯á»±á»³Ã½á»·á»¹á»µÄ‘]+",
-            normalized,
-        )
+        for term in re.split(r"[^0-9a-z]+", normalized)
         if len(term) > 1
     ]

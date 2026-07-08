@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 
 from rag.types import QueryAnalysis
 
@@ -11,7 +12,7 @@ CATEGORY_SYNONYMS = {
     "an_vat": ["an vat", "lot bung", "snack", "banh trang", "pha lau"],
     "lau_nuong": ["lau", "nuong", "bbq", "suon", "do nuong"],
     "gia_dinh": ["gia dinh", "com nha", "am cung", "nhieu nguoi", "me nau"],
-    "tong_hop": ["quan ngon", "goi y", "nen thu", "noi bat"],
+    "tong_hop": ["quan ngon", "goi y", "nen thu", "noi bat", "mon ngon"],
 }
 
 CUISINE_KEYWORDS = [
@@ -49,10 +50,17 @@ LOCATION_PATTERNS = [
     r"binh thanh",
     r"go vap",
     r"phu nhuan",
-    r"quan \d+",
+    r"tan binh",
+    r"tan phu",
     r"nguyen trai",
     r"xo viet nghe tinh",
     r"bui vien",
+    r"tphcm",
+    r"tp hcm",
+    r"ho chi minh",
+    r"ha noi",
+    r"da nang",
+    r"son tra",
 ]
 
 GREETING_PATTERNS = [
@@ -66,8 +74,10 @@ GREETING_PATTERNS = [
 
 FOOD_DOMAIN_HINTS = [
     "quan",
+    "quan an",
     "nha hang",
     "mon",
+    "mon ngon",
     "an",
     "uong",
     "am thuc",
@@ -79,8 +89,13 @@ FOOD_DOMAIN_HINTS = [
 
 
 def normalize_text(text: str) -> str:
-    lowered = text.lower()
-    cleaned = re.sub(r"[^0-9a-zA-Z\sàáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ]", " ", lowered)
+    lowered = unicodedata.normalize("NFKC", text.lower()).replace("đ", "d")
+    without_accents = "".join(
+        character
+        for character in unicodedata.normalize("NFKD", lowered)
+        if not unicodedata.combining(character)
+    )
+    cleaned = re.sub(r"[^0-9a-z\s]", " ", without_accents)
     return re.sub(r"\s+", " ", cleaned).strip()
 
 
@@ -89,11 +104,11 @@ def analyze_query(question: str) -> QueryAnalysis:
     categories = [
         category
         for category, synonyms in CATEGORY_SYNONYMS.items()
-        if any(term in normalized_query for term in synonyms)
+        if any(contains_phrase(normalized_query, term) for term in synonyms)
     ]
 
-    cuisine_terms = [term for term in CUISINE_KEYWORDS if term in normalized_query]
-    vibe_terms = [term for term in VIBE_KEYWORDS if term in normalized_query]
+    cuisine_terms = [term for term in CUISINE_KEYWORDS if matches_cuisine_term(normalized_query, term)]
+    vibe_terms = [term for term in VIBE_KEYWORDS if contains_phrase(normalized_query, term)]
     location_terms = sorted(
         {
             match.group(0)
@@ -124,11 +139,11 @@ def analyze_query(question: str) -> QueryAnalysis:
 
 def infer_intents(normalized_query: str) -> list[str]:
     intents: list[str] = []
-    if any(token in normalized_query for token in ["o dau", "quan nao", "goi y", "nen an"]):
+    if any(contains_phrase(normalized_query, token) for token in ["o dau", "quan nao", "goi y", "nen an", "mon ngon"]):
         intents.append("recommend")
-    if any(token in normalized_query for token in ["so sanh", "khac nhau", "chon"]):
+    if any(contains_phrase(normalized_query, token) for token in ["so sanh", "khac nhau", "chon"]):
         intents.append("compare")
-    if any(token in normalized_query for token in ["gan", "khu vuc", "dia chi", "duong"]):
+    if any(contains_phrase(normalized_query, token) for token in ["gan", "khu vuc", "dia chi", "duong"]):
         intents.append("locate")
     return intents
 
@@ -176,4 +191,23 @@ def is_food_domain_query(analysis: QueryAnalysis) -> bool:
         return True
     if analysis.categories or analysis.intents:
         return True
-    return any(hint in analysis.normalized_query for hint in FOOD_DOMAIN_HINTS)
+    return any(contains_phrase(analysis.normalized_query, hint) for hint in FOOD_DOMAIN_HINTS)
+
+
+def contains_phrase(normalized_query: str, phrase: str) -> bool:
+    escaped = re.escape(phrase)
+    pattern = r"(?<![0-9a-z])" + escaped.replace(r"\ ", r"\s+") + r"(?![0-9a-z])"
+    return re.search(pattern, normalized_query) is not None
+
+
+def matches_cuisine_term(normalized_query: str, term: str) -> bool:
+    if not contains_phrase(normalized_query, term):
+        return False
+    if term != "chao":
+        return True
+    if is_greeting_query(normalized_query):
+        return False
+    return any(
+        contains_phrase(normalized_query, token)
+        for token in ["mon", "an", "quan", "goi y", "tim", "dia chi"]
+    )

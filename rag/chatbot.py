@@ -20,10 +20,10 @@ class FoodChatbot:
     ) -> dict:
         return self.pipeline.answer(
             question=question,
-            top_k=5,
-            mode="agentic",
-            retrieval_strategy="hybrid",
-            generation_mode="template",
+            top_k=top_k,
+            mode=mode,
+            retrieval_strategy=retrieval_strategy,
+            generation_mode=generation_mode,
             conversation_messages=conversation_messages,
-            search_mode="adaptive",
+            search_mode=search_mode,
         )

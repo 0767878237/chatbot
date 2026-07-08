@@ -1,6 +1,35 @@
 from __future__ import annotations
 
-from langchain_core.runnables import RunnableLambda
+try:
+    from langchain_core.runnables import RunnableLambda
+except ImportError:  # pragma: no cover - exercised only in reduced environments
+    class RunnableLambda:
+        def __init__(self, func):
+            self.func = func
+
+        def __or__(self, other):
+            if isinstance(other, RunnableLambda):
+                return _RunnableChain([self.func, other.func])
+            return _RunnableChain([self.func, other])
+
+        def invoke(self, payload):
+            return self.func(payload)
+
+
+    class _RunnableChain:
+        def __init__(self, steps):
+            self.steps = list(steps)
+
+        def __or__(self, other):
+            if isinstance(other, RunnableLambda):
+                return _RunnableChain(self.steps + [other.func])
+            return _RunnableChain(self.steps + [other])
+
+        def invoke(self, payload):
+            state = payload
+            for step in self.steps:
+                state = step(state)
+            return state
 
 from rag.agent import RetrievalAgent
 from rag.generator import OllamaAnswerGenerator, TemplateAnswerGenerator
@@ -14,7 +43,7 @@ from rag.query_router import analyze_query, is_food_domain_query, is_greeting_qu
 from rag.retriever import TfidfRetriever
 from rag.scope_guard import check_scope
 from rag.types import AdaptiveRouteDecision, QueryAnalysis, RetrievalResult, WebSearchResult
-from rag.web_search import DuckDuckGoWebSearch
+from rag.web_search import TavilyWebSearch
 
 
 class AdaptiveRAGPipeline:
@@ -23,7 +52,7 @@ class AdaptiveRAGPipeline:
         self.agent = RetrievalAgent(retriever)
         self.template_generator = TemplateAnswerGenerator()
         self.ollama_generator = OllamaAnswerGenerator()
-        self.web_search = DuckDuckGoWebSearch()
+        self.web_search = TavilyWebSearch()
         self.chain = (
             RunnableLambda(self._prepare_state)
             | RunnableLambda(self._route)
@@ -379,9 +408,17 @@ class AdaptiveRAGPipeline:
         rewritten_question = str(payload["rewritten_question"])
 
         if route_decision.route == "web" and payload.get("web_error"):
+            area_hint = self._describe_area_hint(payload["scope_result"].unsupported_locations, question)
             answer = (
-                "Minh da chuyen sang tim kiem web cho cau hoi nay nhung chua lay duoc ket qua hop ly. "
-                "Ban thu noi ro hon ten khu vuc, mon an hoac thanh pho de minh tim lai."
+                f"Minh da nhan ra ban dang hoi khu vuc {area_hint} va da chuyen sang tim kiem web, "
+                "nhung hien chua lay duoc ket qua ben ngoai du lieu noi bo. "
+                "Ban thu hoi cu the hon theo mon an hoac khu vuc nho hon de minh tim lai."
+            )
+        elif route_decision.route == "web":
+            area_hint = self._describe_area_hint(payload["scope_result"].unsupported_locations, question)
+            answer = (
+                f"Minh da mo rong tim kiem ngoai bo du lieu cho khu vuc {area_hint} nhung chua thay ket qua du hop ly. "
+                "Ban thu hoi cu the hon, vi du kieu 'bun bo o Son Tra, Da Nang' hoac 'hai san o Da Nang'."
             )
         elif route_decision.route == "local":
             answer = (
@@ -542,8 +579,6 @@ class AdaptiveRAGPipeline:
             top_results = web_results[:3]
             for item in top_results:
                 line = f"- {item.title}: {item.snippet}"
-                if item.url:
-                    line += f" ({item.url})"
                 lines.append(line)
         lines.append("Neu ban muon, minh co the tiep tuc loc theo mon an, muc gia hoac khu vuc cu the hon.")
         return "\n\n".join([lines[0], "\n".join(lines[1:])])
@@ -567,8 +602,6 @@ class AdaptiveRAGPipeline:
             web_lines = ["Ngoai bo du lieu, minh tim thay them:"]
             for item in web_results[:2]:
                 line = f"- {item.title}: {item.snippet}"
-                if item.url:
-                    line += f" ({item.url})"
                 web_lines.append(line)
             paragraphs.append("\n".join(web_lines))
 
@@ -632,10 +665,21 @@ class AdaptiveRAGPipeline:
                 "Ban hay hoi theo kieu nhu 'quan nao o Binh Thanh', 'an toi o dau', hoac 'goi y mon bun bo'."
             )
 
-        if len(normalized_question.split()) <= 2 and not analysis.location_terms and not analysis.cuisine_terms:
+        if (
+            len(normalized_question.split()) <= 2
+            and not analysis.location_terms
+            and not analysis.cuisine_terms
+            and not analysis.categories
+            and not analysis.intents
+        ):
             return (
                 f"Minh chua du hieu cau hoi '{question.strip()}'. "
                 "Ban hay noi ro them mon an, khu vuc hoac tieu chi ban muon tim de minh goi y chinh xac hon."
             )
 
         return None
+
+    def _describe_area_hint(self, unsupported_locations: list[str], question: str) -> str:
+        if unsupported_locations:
+            return ", ".join(unsupported_locations)
+        return question.strip() or "ban vua hoi"
