@@ -4,3 +4,6 @@ Plan/
 __pycache__/
 venv/
 *.pyc
+.env
+artifacts/
+.pytest_cache/

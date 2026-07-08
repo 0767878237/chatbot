@@ -6,8 +6,8 @@ Do an nay duoc build bang Python + Streamlit de mo phong lo trinh nang cap tu lo
 - `Agentic RAG`: query analysis + multi-query retrieval + filter + rerank + trace tung buoc
 - `Adaptive RAG`: tu route giua local retrieval, web retrieval va hybrid retrieval
 - `Local LLM mode`: co the goi `Ollama` khi demo local va fallback ve template khi Ollama khong san sang
-- `Conversation memory`: hieu cac cau hoi noi tiep nhu `con quan nao khac`, `Binh Thanh thi sao`, `so sanh 2 quan nay`
-- `DuckDuckGo web search`: mo rong sang khu vuc ngoai dataset khi can
+- `Conversation memory`: hieu cac cau hoi noi tiep
+- `Tavily web search`: mo rong sang khu vuc ngoai dataset khi can
 
 ## Tinh nang
 
@@ -17,7 +17,7 @@ Do an nay duoc build bang Python + Streamlit de mo phong lo trinh nang cap tu lo
 - Phan tich truy van de tim category, mon an, vibe, dia diem
 - Chay vong lap agent nhe de thu nhieu bien the truy van
 - Route theo kieu adaptive bang `LangChain Runnable`
-- Tim kiem web bang `DuckDuckGo`
+- Tim kiem web bang `Tavily`
 - Hien thi prompt preview va trace tung buoc cua agent
 - Deploy truc tiep len Streamlit Community Cloud ma khong can API tra phi
 - Ho tro `hybrid retrieval` bang cach ket hop lexical va latent semantic scoring
@@ -65,7 +65,9 @@ App hien co 3 che do tim kiem:
 - `local_only`: chi dung du lieu RAG noi bo
 - `web_only`: bo qua dataset noi bo, chi tim web
 
-Che do `adaptive` va `web_only` can internet vi se dung DuckDuckGo de mo rong truy van theo thoi gian thuc.
+Che do `adaptive` va `web_only` can internet vi se dung Tavily de mo rong truy van theo thoi gian thuc.
+
+Can cau hinh `TAVILY_API_KEY` trong file `.env` hoac bien moi truong he thong.
 
 ## Chay voi Ollama khi demo local
 
@@ -145,7 +147,7 @@ Script se xuat JSON gom 3 cau hinh:
 - `baseline + hybrid`
 - `agentic + hybrid`
 
-Ban co the dua cac chi so sau vao bao cao:
+Dua cac chi so sau vao bao cao:
 
 - `top1_accuracy`
 - `topk_accuracy`
