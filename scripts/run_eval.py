@@ -9,13 +9,20 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from rag.chatbot import FoodChatbot
-from rag.pipeline import build_retriever
-from rag.retriever import normalize_text
-
 
 def load_eval_set(path: str | Path) -> list[dict]:
     return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def extract_retrieved_titles(result: dict) -> list[str]:
+    debug = result.get("debug", {})
+    retrieved_chunks = debug.get("retrieved_chunks", [])
+    titles: list[str] = []
+    for item in retrieved_chunks:
+        title = str(item.get("title", "")).strip()
+        if title:
+            titles.append(title)
+    return titles
 
 
 def run_eval(
@@ -24,6 +31,10 @@ def run_eval(
     retrieval_strategy: str,
     top_k: int = 4,
 ) -> dict:
+    from rag.chatbot import FoodChatbot
+    from rag.pipeline import build_retriever
+    from rag.retriever import normalize_text
+
     retriever = build_retriever()
     chatbot = FoodChatbot(retriever)
 
@@ -39,8 +50,9 @@ def run_eval(
             top_k=top_k,
             mode=mode,
             retrieval_strategy=retrieval_strategy,
+            search_mode="local_only",
         )
-        retrieved_titles = [source.chunk.document.title for source in result["sources"]]
+        retrieved_titles = extract_retrieved_titles(result)
         normalized_expected = [normalize_text(title) for title in item["expected_titles"]]
         normalized_titles = [normalize_text(title) for title in retrieved_titles]
 
