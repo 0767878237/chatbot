@@ -7,15 +7,16 @@ from rag.pipeline import build_retriever
 
 
 st.set_page_config(
-    page_title="Sai Gon Food Chatbot",
+    page_title="FoodMap",
     page_icon="🍜",
     layout="wide",
+    initial_sidebar_state="collapsed",
 )
 
 
 @st.cache_resource
 def get_chatbot() -> FoodChatbot:
-    retriever = build_retriever()
+    retriever = build_retriever(persist_artifacts=False)
     return FoodChatbot(retriever)
 
 
@@ -26,7 +27,7 @@ def bootstrap_state() -> None:
                 "role": "assistant",
                 "content": (
                     "Xin chao, minh la chatbot am thuc TP.HCM.\n\n"
-                    "Ban co the hoi ve mon an, quan an, dia diem lang man, hoac cac khu vuc ngoai bo du lieu bang Adaptive RAG."
+                    "Ban co the hoi ve mon an, quan an, khu vuc, muc gia hoac phong cach quan ban dang tim."
                 ),
                 "sources": [],
                 "debug": None,
@@ -41,56 +42,203 @@ def render_styles() -> None:
     st.markdown(
         """
         <style>
+            :root {
+                --bg-start: #0D0E12;
+                --bg-end: #14110F;
+                --panel: rgba(26, 29, 36, 0.92);
+                --panel-strong: rgba(31, 27, 24, 0.97);
+                --panel-soft: rgba(37, 41, 50, 0.88);
+                --border: rgba(255, 107, 53, 0.18);
+                --border-strong: rgba(255, 107, 53, 0.42);
+                --text-main: #F3EEE8;
+                --text-soft: #B7AAA0;
+                --accent: #FF6B35;
+                --accent-2: #E85D04;
+                --user-panel: #252932;
+            }
             .stApp {
                 background:
-                    radial-gradient(circle at top left, rgba(255, 229, 180, 0.45), transparent 30%),
-                    linear-gradient(180deg, #fff8ef 0%, #f5efe6 100%);
+                    radial-gradient(circle at top left, rgba(255, 107, 53, 0.12), transparent 24%),
+                    radial-gradient(circle at top right, rgba(232, 93, 4, 0.08), transparent 22%),
+                    linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+                color: var(--text-main);
             }
             .block-container {
-                max-width: 1120px;
-                padding-top: 1.5rem;
-                padding-bottom: 2rem;
+                max-width: 1040px;
+                padding-top: 1.2rem;
+                padding-bottom: 2.2rem;
             }
             .chat-shell {
-                background: rgba(255, 255, 255, 0.8);
-                border: 1px solid rgba(126, 76, 39, 0.15);
+                background: linear-gradient(180deg, var(--panel) 0%, var(--panel-strong) 100%);
+                border: 1px solid var(--border);
                 border-radius: 28px;
-                padding: 1rem 1.2rem;
-                box-shadow: 0 24px 80px rgba(91, 58, 34, 0.10);
-                backdrop-filter: blur(14px);
+                padding: 1rem 1.2rem 1.1rem 1.2rem;
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
+                backdrop-filter: blur(18px);
             }
             .title-wrap {
                 padding: 0.2rem 0 1rem 0;
             }
+            .hero-card {
+                background:
+                    linear-gradient(135deg, rgba(31, 27, 24, 0.96) 0%, rgba(26, 29, 36, 0.94) 100%);
+                border: 1px solid var(--border);
+                border-radius: 28px;
+                padding: 1.35rem 1.4rem;
+                box-shadow: 0 22px 70px rgba(0, 0, 0, 0.26);
+                margin-bottom: 1rem;
+            }
             .title-wrap h1 {
-                font-size: 2rem;
-                color: #5c3417;
-                margin-bottom: 0.2rem;
-            }
-            .title-wrap p {
-                color: #7d5b46;
+                font-size: 2.2rem;
+                color: var(--text-main);
                 margin: 0;
+                letter-spacing: -0.03em;
             }
-            .source-card {
-                border-radius: 16px;
-                padding: 0.8rem 1rem;
+            .title-kicker {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.45rem;
+                color: var(--accent);
+                font-size: 0.78rem;
+                text-transform: uppercase;
+                letter-spacing: 0.18em;
+                margin-bottom: 0.85rem;
+            }
+            .title-meta {
                 margin-top: 0.6rem;
-                background: #fff6ea;
-                border: 1px solid #f0dbc0;
+                color: var(--text-soft);
+                font-size: 0.98rem;
             }
             .debug-card {
                 border-radius: 16px;
                 padding: 0.9rem 1rem;
-                background: #f4f1ec;
-                border: 1px dashed #ceb79a;
+                background: var(--panel-soft);
+                border: 1px dashed var(--border-strong);
                 margin-top: 0.8rem;
+                color: var(--text-main);
             }
-            .metric-card {
+            [data-testid="stChatMessage"] {
+                margin-bottom: 0.5rem;
+            }
+            [data-testid="stChatMessageContent"] {
+                color: var(--text-main);
+                background: rgba(26, 29, 36, 0.68);
+                border: 1px solid rgba(255, 107, 53, 0.10);
+                border-radius: 20px;
+                padding: 0.2rem 0.35rem;
+            }
+            [data-testid="stChatMessageContent"] p,
+            [data-testid="stChatMessageContent"] div,
+            [data-testid="stChatMessageContent"] span,
+            [data-testid="stChatMessageContent"] li,
+            [data-testid="stChatMessageContent"] strong {
+                color: #F3EEE8 !important;
+            }
+            [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) [data-testid="stChatMessageContent"] {
+                background: var(--user-panel);
+                border: 1px solid rgba(243, 238, 232, 0.14);
+            }
+            [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) [data-testid="stChatMessageContent"] p,
+            [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) [data-testid="stChatMessageContent"] div,
+            [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) [data-testid="stChatMessageContent"] span {
+                color: #FAF7F2 !important;
+            }
+            [data-testid="stChatMessageAvatarAssistant"] {
+                background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+                color: #fff5ef;
+                border-radius: 14px;
+                box-shadow: 0 10px 24px rgba(232, 93, 4, 0.30);
+            }
+            [data-testid="stChatMessageAvatarUser"] {
+                background: #2A2E38;
+                color: var(--text-main);
+                border-radius: 14px;
+                border: 1px solid rgba(243, 238, 232, 0.12);
+            }
+            [data-testid="stSidebar"],
+            [data-testid="collapsedControl"] {
+                display: none;
+            }
+            [data-testid="stExpander"] {
+                border: 1px solid var(--border-strong);
                 border-radius: 18px;
-                padding: 0.9rem 1rem;
-                background: rgba(255, 255, 255, 0.7);
-                border: 1px solid rgba(126, 76, 39, 0.12);
-                margin-bottom: 0.75rem;
+                background: rgba(31, 27, 24, 0.90);
+            }
+            [data-testid="stExpander"] summary,
+            [data-testid="stExpander"] p,
+            [data-testid="stExpander"] label,
+            [data-testid="stExpander"] div {
+                color: var(--text-main);
+            }
+            .stChatInputContainer {
+                background: transparent !important;
+                padding-top: 0.55rem;
+            }
+            .stChatInputContainer > div {
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+            div[data-testid="stChatInput"] {
+                background: #1A1D24 !important;
+                border: 1px solid var(--border-strong) !important;
+                border-radius: 18px !important;
+                box-shadow: 0 18px 44px rgba(0, 0, 0, 0.30) !important;
+                overflow: hidden !important;
+            }
+            div[data-testid="stChatInput"] > div,
+            div[data-testid="stChatInput"] > div > div,
+            div[data-testid="stChatInput"] > div > div > div {
+                background: #1A1D24 !important;
+            }
+            div[data-testid="stChatInput"] textarea,
+            div[data-testid="stChatInput"] input,
+            .stChatInput textarea,
+            .stChatInput input {
+                color: var(--text-main) !important;
+                -webkit-text-fill-color: var(--text-main) !important;
+                caret-color: var(--accent) !important;
+                font-weight: 500 !important;
+                background: #1A1D24 !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+            div[data-testid="stChatInput"] textarea::placeholder,
+            div[data-testid="stChatInput"] input::placeholder,
+            .stChatInput textarea::placeholder,
+            .stChatInput input::placeholder {
+                color: var(--text-soft) !important;
+                -webkit-text-fill-color: var(--text-soft) !important;
+                opacity: 0.9 !important;
+            }
+            div[data-testid="stChatInput"] textarea:focus,
+            div[data-testid="stChatInput"] input:focus,
+            .stChatInput textarea:focus,
+            .stChatInput input:focus {
+                background: #1A1D24 !important;
+                color: var(--text-main) !important;
+                -webkit-text-fill-color: var(--text-main) !important;
+                outline: none !important;
+                box-shadow: none !important;
+            }
+            div[data-testid="stChatInput"] textarea::selection,
+            div[data-testid="stChatInput"] input::selection,
+            .stChatInput textarea::selection,
+            .stChatInput input::selection {
+                background: rgba(255, 107, 53, 0.30) !important;
+                color: #fff7f2 !important;
+            }
+            div[data-testid="stChatInput"] button,
+            .stChatInput button {
+                background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%) !important;
+                border: 1px solid rgba(255, 107, 53, 0.45) !important;
+                color: #fff5ef !important;
+                border-radius: 14px !important;
+                box-shadow: 0 10px 24px rgba(232, 93, 4, 0.24) !important;
+            }
+            div[data-testid="stChatInput"] button:hover,
+            .stChatInput button:hover {
+                background: linear-gradient(135deg, #ff7c4d 0%, #ff6b35 100%) !important;
             }
         </style>
         """,
@@ -98,147 +246,37 @@ def render_styles() -> None:
     )
 
 
-def render_debug(debug_data: dict | None) -> None:
-    if not debug_data:
-        return
-
-    with st.expander("Xem flow RAG / agent trace", expanded=False):
-        route = debug_data.get("route")
-        if route:
-            st.markdown("**Adaptive route**")
-            st.json(route)
-        strategy = debug_data.get("retrieval_strategy")
-        if strategy:
-            st.markdown(f"**Retrieval strategy:** `{strategy}`")
-        generation_mode = debug_data.get("generation_mode")
-        if generation_mode:
-            st.markdown(f"**Generation mode:** `{generation_mode}`")
-        generation_debug = debug_data.get("generation_debug")
-        if generation_debug:
-            st.markdown("**Generation debug**")
-            st.json(generation_debug)
-        search_mode = debug_data.get("search_mode")
-        if search_mode:
-            st.markdown(f"**Search mode:** `{search_mode}`")
-        scope_check = debug_data.get("scope_check")
-        if scope_check:
-            st.markdown("**Scope check**")
-            st.json(scope_check)
-        web_results = debug_data.get("web_results")
-        if web_results:
-            st.markdown("**Web retrieval debug**")
-            st.json(web_results)
-        web_error = debug_data.get("web_error")
-        if web_error:
-            st.markdown(f"**Web error:** `{web_error}`")
-        memory_debug = debug_data.get("memory_debug")
-        if memory_debug:
-            st.markdown("**Memory debug**")
-            st.json(memory_debug)
-        memory_snapshot = debug_data.get("memory_snapshot")
-        if memory_snapshot:
-            st.markdown("**Memory snapshot**")
-            st.json(memory_snapshot)
-
-        query_analysis = debug_data.get("query_analysis")
-        if query_analysis:
-            st.markdown("**Phan tich truy van**")
-            st.json(query_analysis)
-
-        agent_steps = debug_data.get("agent_steps", [])
-        if agent_steps:
-            st.markdown("**Cac buoc agent da thuc hien**")
-            for step in agent_steps:
-                st.markdown(
-                    (
-                        "<div class='debug-card'>"
-                        f"<strong>{step['name']}</strong><br>"
-                        f"{step['detail']}"
-                        "</div>"
-                    ),
-                    unsafe_allow_html=True,
-                )
-                st.json(step.get("payload", {}))
-
-        retrieved_chunks = debug_data.get("retrieved_chunks", [])
-        if retrieved_chunks:
-            st.markdown("**Cac chunk duoc retrieve**")
-            for chunk in retrieved_chunks:
-                st.markdown(
-                    (
-                        "<div class='debug-card'>"
-                        f"<strong>{chunk['title']}</strong><br>"
-                        f"Score: {chunk['score']}<br>"
-                        f"Score breakdown: {chunk.get('score_breakdown', {})}<br>"
-                        f"Tu khop: {', '.join(chunk['matched_terms']) or 'Khong co'}<br><br>"
-                        f"{chunk['content']}"
-                        "</div>"
-                    ),
-                    unsafe_allow_html=True,
-                )
-
-        st.markdown("**Prompt preview**")
-        st.code(debug_data.get("prompt_preview", ""), language="text")
-
-
-def sidebar_controls() -> dict[str, object]:
-    with st.sidebar:
-        st.markdown("## Che do demo")
-        mode = "agentic"
-        retrieval_strategy = "hybrid"
-        generation_mode = "template"
-        search_mode = "adaptive"
-        top_k = 5
-        st.markdown(
-            """
-            <div class='metric-card'>
-                <strong>Cau hinh co dinh</strong><br>
-                Retrieval: `hybrid` | Search: `adaptive` | Generation: `template` | Top K: `5`
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            """
-            <div class='metric-card'>
-                <strong>Muc tieu</strong><br>
-                Khoa cau hinh de chatbot on dinh hon, giam tra loi lech do thay doi qua nhieu tuy chon.
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-    return {
-        "mode": mode,
-        "top_k": top_k,
-        "retrieval_strategy": retrieval_strategy,
-        "generation_mode": generation_mode,
-        "search_mode": search_mode,
-    }
+CHATBOT_CONFIG = {
+    "mode": "agentic",
+    "top_k": 5,
+    "retrieval_strategy": "hybrid",
+    "generation_mode": "template",
+    "search_mode": "adaptive",
+}
 
 
 def main() -> None:
     bootstrap_state()
     render_styles()
     chatbot = get_chatbot()
-    controls = sidebar_controls()
 
     if st.session_state.pending_prompt:
         prompt = st.session_state.pending_prompt
         response = chatbot.answer(
             prompt,
-            top_k=int(controls["top_k"]),
-            mode=str(controls["mode"]),
-            retrieval_strategy=str(controls["retrieval_strategy"]),
-            generation_mode=str(controls["generation_mode"]),
+            top_k=int(CHATBOT_CONFIG["top_k"]),
+            mode=str(CHATBOT_CONFIG["mode"]),
+            retrieval_strategy=str(CHATBOT_CONFIG["retrieval_strategy"]),
+            generation_mode=str(CHATBOT_CONFIG["generation_mode"]),
             conversation_messages=st.session_state.messages,
-            search_mode=str(controls["search_mode"]),
+            search_mode=str(CHATBOT_CONFIG["search_mode"]),
         )
         assistant_message = {
             "role": "assistant",
             "content": response["answer"],
             "sources": response["sources"],
             "debug": response["debug"],
-            "mode": controls["mode"],
+            "mode": CHATBOT_CONFIG["mode"],
         }
         st.session_state.messages.append(assistant_message)
         st.session_state.pending_prompt = None
@@ -246,45 +284,23 @@ def main() -> None:
 
     st.markdown(
         """
-        <div class="title-wrap">
-            <h1>Sai Gon Food Chatbot</h1>
-            <p>Adaptive RAG duoc co dinh cau hinh de uu tien tinh on dinh khi demo va bao cao.</p>
+        <div class="title-wrap hero-card">
+            <div class="title-kicker">Sai Gon Food Intelligence</div>
+            <h1>FoodMap</h1>
+            <div class="title-meta">Tra cuu am thuc va dia diem an uong voi giao dien tap trung vao hoi dap.</div>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
-    left_col, right_col = st.columns([2.2, 1])
-    with left_col:
-        with st.container():
-            st.markdown("<div class='chat-shell'>", unsafe_allow_html=True)
-            for message in st.session_state.messages:
-                with st.chat_message(message["role"]):
-                    st.markdown(message["content"])
-                    render_debug(message.get("debug"))
-            st.markdown("</div>", unsafe_allow_html=True)
+    with st.container():
+        st.markdown("<div class='chat-shell'>", unsafe_allow_html=True)
+        for message in st.session_state.messages:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
+        st.markdown("</div>", unsafe_allow_html=True)
 
-    with right_col:
-        st.markdown("### Cach demo")
-        st.markdown(
-            "- Chatbot dang dung cau hinh co dinh `hybrid + adaptive + top_k=5`.\n"
-            "- Thu hoi ve mon an, kieu quan, dia diem hoac khong gian.\n"
-            "- Hoi tiep theo kieu `con quan nao khac?`, `Binh Thanh thi sao?`, `so sanh 2 quan nay`.\n"
-            "- Cac cau chao hoi va cau ngoai nghiep vu se duoc chan truoc khi retrieve.\n"
-            "- Mo `Xem flow RAG / agent trace` de giai thich tai sao chatbot tra loi nhu vay."
-        )
-        st.markdown("### Cau hoi goi y")
-        st.markdown(
-            "- Quan nao lang man cho buoi toi o TP.HCM?\n"
-            "- Toi muon an vat lot bung o khuya thi nen di dau?\n"
-            "- Goi y quan nuong cho gia dinh.\n"
-            "- Tim quan co mon chao o TP.HCM.\n"
-            "- Con quan nao khac?\n"
-            "- Binh Thanh thi sao?\n"
-            "- Quan bun bo o Ha Noi thi sao?"
-        )
-
-    prompt = st.chat_input("Thu hoi ve mon an, quan an, dia diem o TP.HCM...")
+    prompt = st.chat_input("Nhap cau hoi ve mon an, quan an hoac khu vuc ban quan tam...")
     if prompt:
         st.session_state.messages.append(
             {"role": "user", "content": prompt, "sources": [], "debug": None}
