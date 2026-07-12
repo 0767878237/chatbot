@@ -4,11 +4,11 @@ import streamlit as st
 
 from rag.chatbot import FoodChatbot
 from rag.pipeline import build_retriever
+from rag.settings import is_debug_enabled
 
 
 st.set_page_config(
     page_title="FoodMap",
-    page_icon="🍜",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -36,6 +36,35 @@ def bootstrap_state() -> None:
         ]
     if "pending_prompt" not in st.session_state:
         st.session_state.pending_prompt = None
+
+
+def build_session_debug(response: dict) -> dict | None:
+    if is_debug_enabled():
+        return response.get("debug")
+
+    debug = response.get("debug") or {}
+    route = debug.get("route") or {}
+    retrieved_chunks = debug.get("retrieved_chunks") or []
+    compact_chunks: list[dict[str, str]] = []
+    for item in retrieved_chunks:
+        if not isinstance(item, dict):
+            continue
+        title = str(item.get("title", "")).strip()
+        if title:
+            compact_chunks.append({"title": title})
+
+    return {
+        "route": {
+            "selected": route.get("selected", ""),
+            "reason": route.get("reason", ""),
+            "local_confidence": route.get("local_confidence", 0.0),
+            "used_memory": route.get("used_memory", False),
+        },
+        "retrieved_chunks": compact_chunks,
+        "memory_debug": {
+            "used_memory": (debug.get("memory_debug") or {}).get("used_memory", False),
+        },
+    }
 
 
 def render_styles() -> None:
@@ -275,7 +304,7 @@ def main() -> None:
             "role": "assistant",
             "content": response["answer"],
             "sources": response["sources"],
-            "debug": response["debug"],
+            "debug": build_session_debug(response),
             "mode": CHATBOT_CONFIG["mode"],
         }
         st.session_state.messages.append(assistant_message)
@@ -287,7 +316,7 @@ def main() -> None:
         <div class="title-wrap hero-card">
             <div class="title-kicker">Sai Gon Food Intelligence</div>
             <h1>FoodMap</h1>
-            <div class="title-meta">Tra cuu am thuc va dia diem an uong voi giao dien tap trung vao hoi dap.</div>
+            <div class="title-meta">Tra cứu ẩm thực và địa điểm ăn uống.</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -300,7 +329,7 @@ def main() -> None:
                 st.markdown(message["content"])
         st.markdown("</div>", unsafe_allow_html=True)
 
-    prompt = st.chat_input("Nhap cau hoi ve mon an, quan an hoac khu vuc ban quan tam...")
+    prompt = st.chat_input("Nhập câu hỏi về quán ăn, địa điểm ăn uống...")
     if prompt:
         st.session_state.messages.append(
             {"role": "user", "content": prompt, "sources": [], "debug": None}

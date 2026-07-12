@@ -67,7 +67,14 @@ App hien co 3 che do tim kiem:
 
 Che do `adaptive` va `web_only` can internet vi se dung Tavily de mo rong truy van theo thoi gian thuc.
 
-Can cau hinh `TAVILY_API_KEY` trong file `.env` hoac bien moi truong he thong.
+## Cau hinh an toan khi deploy
+
+- Chi set `TAVILY_API_KEY` trong Streamlit Secrets hoac bien moi truong he thong.
+- Co the bat dau tu file mau `.streamlit/secrets.example.toml`.
+- Khong dua file `.env` len production.
+- Dat `APP_ENV=production` va `APP_DEBUG=false` khi deploy that.
+- Neu muon lay debug khi dev local, co the bat `APP_DEBUG=true`.
+- `ALLOW_DOTENV` mac dinh chi dung cho local dev; production se khong tu doc `.env`.
 
 ## Chay voi Ollama khi demo local
 
@@ -209,6 +216,7 @@ Neu bat `search = adaptive`, cac cau hoi tren co the duoc mo rong tim kiem thay 
 4. Tro toi repo va file `app.py`.
 5. Deploy truc tiep voi `requirements.txt` hien tai.
 6. Khi deploy cloud, giu `generation = template` vi Streamlit Cloud khong chay local Ollama.
+7. Dat secret trong Streamlit Secrets, khong commit `.env`.
 
 Neu sua du lieu trong `data/train.txt`, hay build lai index truoc khi commit:
 

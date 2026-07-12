@@ -1,21 +1,19 @@
 from __future__ import annotations
 
-import os
-from pathlib import Path
-
 try:
     from tavily import TavilyClient
 except ImportError:  # pragma: no cover - depends on optional runtime package
     TavilyClient = None
 
 from rag.query_router import normalize_text
+from rag.settings import load_tavily_api_key
 from rag.types import WebSearchResult
 
 
 class TavilyWebSearch:
     def __init__(self, max_results: int = 5, api_key: str | None = None):
         self.max_results = max_results
-        self.api_key = api_key or _load_tavily_api_key(required=False)
+        self.api_key = (api_key or load_tavily_api_key()).strip()
         self.client = self._build_client()
 
     def search(self, query: str, max_results: int | None = None) -> list[WebSearchResult]:
@@ -93,31 +91,9 @@ class TavilyWebSearch:
         return deduped
 
 
-def _load_tavily_api_key(required: bool = True) -> str:
-    env_value = os.getenv("TAVILY_API_KEY", "").strip().strip('"').strip("'")
-    if env_value:
-        return env_value
-
-    env_path = Path(".env")
-    if env_path.exists():
-        for raw_line in env_path.read_text(encoding="utf-8").splitlines():
-            line = raw_line.strip()
-            if not line or line.startswith("#") or "=" not in line:
-                continue
-            key, value = line.split("=", 1)
-            if key.strip() == "TAVILY_API_KEY":
-                cleaned = value.strip().strip('"').strip("'")
-                if cleaned:
-                    return cleaned
-
-    if required:
-        raise RuntimeError(_build_unavailable_reason(""))
-    return ""
-
-
 def _build_unavailable_reason(api_key: str | None) -> str:
     if TavilyClient is None:
         return "Chua cai dat goi 'tavily-python', nen khong the tim web bang Tavily."
     if not api_key:
-        return "TAVILY_API_KEY chua duoc cau hinh. Hay them khoa vao bien moi truong hoac file .env."
+        return "TAVILY_API_KEY chua duoc cau hinh. Hay them khoa vao Streamlit Secrets hoac bien moi truong."
     return "Tavily search tam thoi khong kha dung."

@@ -574,13 +574,13 @@ class AdaptiveRAGPipeline:
         )
 
     def _compose_web_answer(self, web_results: list[WebSearchResult], question: str) -> str:
-        lines = [f"Minh da mo rong tim kiem web cho cau hoi '{question.strip()}'."]
+        lines = [f"Mở rộng tìm kiếm cho câu hỏi '{question.strip()}'."]
         if web_results:
             top_results = web_results[:3]
             for item in top_results:
                 line = f"- {item.title}: {item.snippet}"
                 lines.append(line)
-        lines.append("Neu ban muon, minh co the tiep tuc loc theo mon an, muc gia hoac khu vuc cu the hon.")
+        lines.append("Nếu muốn, mình có thể tiếp tục lọc theo món ăn, mức giá hoặc khu vực cụ thể hơn.")
         return "\n\n".join([lines[0], "\n".join(lines[1:])])
 
     def _compose_hybrid_answer(
@@ -589,7 +589,7 @@ class AdaptiveRAGPipeline:
         web_results: list[WebSearchResult],
         question: str,
     ) -> str:
-        paragraphs = [f"Minh da ket hop du lieu noi bo va tim kiem web cho cau hoi '{question.strip()}'."]
+        paragraphs = [f"Mở rộng tìm kiếm cho câu hỏi '{question.strip()}'."]
 
         if local_results:
             top_local = local_results[0].chunk.document

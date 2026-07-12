@@ -1,10 +1,23 @@
 [server]
 headless = true
 runOnSave = false
+enableXsrfProtection = true
+enableCORS = true
+maxUploadSize = 10
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = false
+
+[logger]
+level = "warning"
 
 [theme]
-base = "light"
-primaryColor = "#B75C2E"
-backgroundColor = "#FFF8EF"
-secondaryBackgroundColor = "#F5EFE6"
-textColor = "#3E2615"
+base = "dark"
+primaryColor = "#FF6B35"
+backgroundColor = "#0D0E12"
+secondaryBackgroundColor = "#1A1D24"
+textColor = "#F3EEE8"

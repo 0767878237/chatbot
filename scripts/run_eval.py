@@ -35,7 +35,7 @@ def run_eval(
     from rag.pipeline import build_retriever
     from rag.retriever import normalize_text
 
-    retriever = build_retriever()
+    retriever = build_retriever(persist_artifacts=False)
     chatbot = FoodChatbot(retriever)
 
     total = len(eval_set)
